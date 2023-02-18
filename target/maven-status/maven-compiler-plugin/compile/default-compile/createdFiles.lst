@@ -1,0 +1,5 @@
+UI\CourseManager$1.class
+DAL\CourseDAL.class
+DTO\Course.class
+BLL\CourseBLL.class
+UI\CourseManager.class
