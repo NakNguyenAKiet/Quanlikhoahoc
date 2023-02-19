@@ -20,12 +20,15 @@ import java.util.logging.Logger;
  */
 public class CourseDAL {
     private Connection con;
+    private static String sql;
+    private static Statement stm;
+    private static ResultSet rs;
     public boolean openConnection(){
         try {
             String dbPath = "jdbc:mysql://localhost: 3306/school?useUnicode=yes&characterEncoding=UTF-8";
             con = DriverManager.getConnection(dbPath, "root", "");
             return true;
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
@@ -46,9 +49,9 @@ public class CourseDAL {
         ArrayList<Course> list = new ArrayList<Course>();
         if(openConnection()){
             try {
-                String sql = "select * from course";
-                Statement stm = con.createStatement();
-                ResultSet rs = stm.executeQuery(sql);
+                sql = "select * from course";
+                stm = con.createStatement();
+                rs = stm.executeQuery(sql);
                 while(rs.next()){
                     Course acc = new Course();
                     acc.setCourseID(rs.getInt("CourseID"));
@@ -62,11 +65,7 @@ public class CourseDAL {
             }finally{
                 closeConnection();
             }
-        }
-        
+        }   
         return list;
-    }
-    
-    
-    
+    }  
 }
