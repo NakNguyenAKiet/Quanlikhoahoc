@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.6" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -186,8 +186,8 @@
                     <Container class="javax.swing.JPanel" name="jPanel55">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="ONSITE">
-                            <Property name="tabTitle" type="java.lang.String" value="ONSITE"/>
+                          <JTabbedPaneConstraints tabName="ONSITE COURSE">
+                            <Property name="tabTitle" type="java.lang.String" value="ONSITE COURSE"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1076,8 +1076,8 @@
                                           <Component id="jPanel73" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="12" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane4" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane4" min="-2" pref="386" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1092,13 +1092,84 @@
                               <SubComponents>
                                 <Component class="javax.swing.JTable" name="OnsiteCourse_CourseList_Table">
                                   <Properties>
+                                    <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="4" rowCount="4">
-                                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                                      <Table columnCount="5" rowCount="4">
+                                        <Column editable="true" title="ID" type="java.lang.Integer">
+                                          <Data value="1"/>
+                                          <Data value="2"/>
+                                          <Data value="3"/>
+                                          <Data value="4"/>
+                                        </Column>
+                                        <Column editable="true" title="Title" type="java.lang.String">
+                                          <Data value="L&#x1ead;p tr&#xec;nh m&#x1ea1;ng"/>
+                                          <Data value="Nh&#x1ead;p m&#xf4;n di &#x111;&#x1ed9;ng"/>
+                                          <Data value="PM m&#xe3; ngu&#x1ed3;n m&#x1edf;"/>
+                                          <Data value="PM m&#xf4; h&#xec;nh ph&#xe2;n l&#x1edb;p"/>
+                                        </Column>
+                                        <Column editable="true" title="Credits" type="java.lang.Integer">
+                                          <Data value="4"/>
+                                          <Data value="4"/>
+                                          <Data value="3"/>
+                                          <Data value="4"/>
+                                        </Column>
+                                        <Column editable="true" title="Dep ID" type="java.lang.Integer">
+                                          <Data value="5"/>
+                                          <Data value="6"/>
+                                          <Data value="7"/>
+                                          <Data value="8"/>
+                                        </Column>
+                                        <Column editable="true" title="Location" type="java.lang.String">
+                                          <Data value="A.110"/>
+                                          <Data value="E.503"/>
+                                          <Data value="B.102"/>
+                                          <Data value="C.107"/>
+                                        </Column>
                                       </Table>
+                                    </Property>
+                                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                      <TableColumnModel selectionModel="0">
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="10" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="10" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="10" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                      </TableColumnModel>
+                                    </Property>
+                                    <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                                    </Property>
+                                    <Property name="opaque" type="boolean" value="false"/>
+                                    <Property name="rowHeight" type="int" value="30"/>
+                                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                                    </Property>
+                                    <Property name="selectionForeground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="0" green="0" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="showGrid" type="boolean" value="true"/>
+                                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                     </Property>
                                   </Properties>
                                 </Component>
@@ -1207,8 +1278,8 @@
                     <Container class="javax.swing.JPanel" name="jPanel74">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="ONLINE">
-                            <Property name="tabTitle" type="java.lang.String" value="ONLINE"/>
+                          <JTabbedPaneConstraints tabName="ONLINE COURSE">
+                            <Property name="tabTitle" type="java.lang.String" value="ONLINE COURSE"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1858,14 +1929,13 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jScrollPane5" pref="475" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" attributes="0">
-                                                      <Component id="jLabel34" max="32767" attributes="0"/>
+                                                      <Component id="jLabel34" pref="240" max="32767" attributes="0"/>
                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                       <Component id="OnlineCourse_FullTable_Button" min="-2" pref="119" max="-2" attributes="0"/>
                                                   </Group>
@@ -1877,6 +1947,7 @@
                                                   <Component id="OnlineCourse_Refresh_Button" pref="100" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <Component id="jScrollPane6" alignment="0" pref="475" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -1897,34 +1968,13 @@
                                           <Component id="jPanel88" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="12" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane5" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane6" min="-2" pref="386" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-                              <AuxValues>
-                                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                              </AuxValues>
-
-                              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                              <SubComponents>
-                                <Component class="javax.swing.JTable" name="OnlineCourse_CourseList_Table">
-                                  <Properties>
-                                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="4" rowCount="4">
-                                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                                      </Table>
-                                    </Property>
-                                  </Properties>
-                                </Component>
-                              </SubComponents>
-                            </Container>
                             <Component class="javax.swing.JButton" name="OnlineCourse_Refresh_Button">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2021,6 +2071,103 @@
                                 <Property name="text" type="java.lang.String" value="SEARCH"/>
                               </Properties>
                             </Component>
+                            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+                              <AuxValues>
+                                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                              </AuxValues>
+
+                              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                              <SubComponents>
+                                <Component class="javax.swing.JTable" name="OnlineCourse_CourseList_Table">
+                                  <Properties>
+                                    <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                      <Table columnCount="5" rowCount="4">
+                                        <Column editable="true" title="ID" type="java.lang.Integer">
+                                          <Data value="1"/>
+                                          <Data value="2"/>
+                                          <Data value="3"/>
+                                          <Data value="4"/>
+                                        </Column>
+                                        <Column editable="true" title="Title" type="java.lang.String">
+                                          <Data value="L&#x1ead;p tr&#xec;nh Web 1"/>
+                                          <Data value="L&#x1ead;p tr&#xec;nh Java"/>
+                                          <Data value="L&#x1ead;p tr&#xec;nh Python"/>
+                                          <Data value="C&#x1a1; s&#x1edf; l&#x1ead;p tr&#xec;nh"/>
+                                        </Column>
+                                        <Column editable="true" title="Credits" type="java.lang.Integer">
+                                          <Data value="4"/>
+                                          <Data value="4"/>
+                                          <Data value="3"/>
+                                          <Data value="3"/>
+                                        </Column>
+                                        <Column editable="true" title="Dep ID" type="java.lang.Integer">
+                                          <Data value="5"/>
+                                          <Data value="6"/>
+                                          <Data value="7"/>
+                                          <Data value="8"/>
+                                        </Column>
+                                        <Column editable="true" title="URL" type="java.lang.String">
+                                          <Data value="https:laptinhweb.edu.vn"/>
+                                          <Data value="https:laptinhjava.edu.vn"/>
+                                          <Data value="https:laptinhpython.edu.vn"/>
+                                          <Data value="https:cosolaptrinh.edu.vn"/>
+                                        </Column>
+                                      </Table>
+                                    </Property>
+                                    <Property name="alignmentX" type="float" value="0.0"/>
+                                    <Property name="alignmentY" type="float" value="0.0"/>
+                                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                      <TableColumnModel selectionModel="0">
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="10" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="10" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="10" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
+                                      </TableColumnModel>
+                                    </Property>
+                                    <Property name="focusable" type="boolean" value="false"/>
+                                    <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                                    </Property>
+                                    <Property name="opaque" type="boolean" value="false"/>
+                                    <Property name="rowHeight" type="int" value="30"/>
+                                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                                    </Property>
+                                    <Property name="selectionForeground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="0" green="0" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="showGrid" type="boolean" value="true"/>
+                                    <Property name="showHorizontalLines" type="boolean" value="false"/>
+                                    <Property name="showVerticalLines" type="boolean" value="false"/>
+                                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                    </Property>
+                                  </Properties>
+                                </Component>
+                              </SubComponents>
+                            </Container>
                           </SubComponents>
                         </Container>
                       </SubComponents>

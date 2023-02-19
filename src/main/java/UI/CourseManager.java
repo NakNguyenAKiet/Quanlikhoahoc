@@ -1,19 +1,22 @@
 package UI;
 
-import BLL.CourseBLL;
-import DTO.Course;
+import Utils.CustomTable;
 import javax.swing.JFrame;
 public class CourseManager extends javax.swing.JFrame {
 
-    CourseBLL courseBLL = new CourseBLL();
-    Course course = new Course();
-
+    private static final CustomTable customTable = new CustomTable();
+    
+    @SuppressWarnings("OverridableMethodCallInConstructor")
     public CourseManager() {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+        
+        customTable.customJTable(OnsiteCourse_CourseList_Table);
+        customTable.customJTable(OnlineCourse_CourseList_Table);
     }
+        
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -97,14 +100,14 @@ public class CourseManager extends javax.swing.JFrame {
         OnlineCourse_Delete_Button = new javax.swing.JButton();
         OnlineCourse_Reset_Button = new javax.swing.JButton();
         jPanel87 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        OnlineCourse_CourseList_Table = new javax.swing.JTable();
         OnlineCourse_Refresh_Button = new javax.swing.JButton();
         OnlineCourse_FullTable_Button = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
         jPanel88 = new javax.swing.JPanel();
         OnlineCourse_Search_TextField = new javax.swing.JTextField();
         OnlineCourse_Search_Button = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        OnlineCourse_CourseList_Table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -587,18 +590,40 @@ public class CourseManager extends javax.swing.JFrame {
 
         jPanel72.setBackground(new java.awt.Color(255, 255, 255));
 
+        OnsiteCourse_CourseList_Table.setAutoCreateRowSorter(true);
         OnsiteCourse_CourseList_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                { new Integer(1), "Lập trình mạng",  new Integer(4),  new Integer(5), "A.110"},
+                { new Integer(2), "Nhập môn di động",  new Integer(4),  new Integer(6), "E.503"},
+                { new Integer(3), "PM mã nguồn mở",  new Integer(3),  new Integer(7), "B.102"},
+                { new Integer(4), "PM mô hình phân lớp",  new Integer(4),  new Integer(8), "C.107"}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Title", "Credits", "Dep ID", "Location"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        OnsiteCourse_CourseList_Table.setGridColor(new java.awt.Color(204, 204, 204));
+        OnsiteCourse_CourseList_Table.setOpaque(false);
+        OnsiteCourse_CourseList_Table.setRowHeight(30);
+        OnsiteCourse_CourseList_Table.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        OnsiteCourse_CourseList_Table.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        OnsiteCourse_CourseList_Table.setShowGrid(true);
         jScrollPane4.setViewportView(OnsiteCourse_CourseList_Table);
+        if (OnsiteCourse_CourseList_Table.getColumnModel().getColumnCount() > 0) {
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(0).setPreferredWidth(10);
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(1).setPreferredWidth(100);
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(2).setPreferredWidth(10);
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(3).setPreferredWidth(10);
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(4).setPreferredWidth(150);
+        }
 
         OnsiteCourse_Refresh_Button.setBackground(new java.awt.Color(102, 102, 255));
         OnsiteCourse_Refresh_Button.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -673,8 +698,8 @@ public class CourseManager extends javax.swing.JFrame {
                     .addComponent(OnsiteCourse_Search_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(jPanel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(306, 306, 306))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
@@ -698,7 +723,7 @@ public class CourseManager extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane3.addTab("ONSITE", jPanel55);
+        jTabbedPane3.addTab("ONSITE COURSE", jPanel55);
 
         jPanel75.setBackground(new java.awt.Color(255, 255, 255));
         jPanel75.setPreferredSize(new java.awt.Dimension(400, 0));
@@ -1029,19 +1054,6 @@ public class CourseManager extends javax.swing.JFrame {
 
         jPanel87.setBackground(new java.awt.Color(255, 255, 255));
 
-        OnlineCourse_CourseList_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane5.setViewportView(OnlineCourse_CourseList_Table);
-
         OnlineCourse_Refresh_Button.setBackground(new java.awt.Color(102, 102, 255));
         OnlineCourse_Refresh_Button.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         OnlineCourse_Refresh_Button.setForeground(new java.awt.Color(255, 255, 255));
@@ -1081,6 +1093,46 @@ public class CourseManager extends javax.swing.JFrame {
         OnlineCourse_Search_Button.setForeground(new java.awt.Color(255, 255, 255));
         OnlineCourse_Search_Button.setText("SEARCH");
 
+        OnlineCourse_CourseList_Table.setAutoCreateRowSorter(true);
+        OnlineCourse_CourseList_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1), "Lập trình Web 1",  new Integer(4),  new Integer(5), "https:laptinhweb.edu.vn"},
+                { new Integer(2), "Lập trình Java",  new Integer(4),  new Integer(6), "https:laptinhjava.edu.vn"},
+                { new Integer(3), "Lập trình Python",  new Integer(3),  new Integer(7), "https:laptinhpython.edu.vn"},
+                { new Integer(4), "Cơ sở lập trình",  new Integer(3),  new Integer(8), "https:cosolaptrinh.edu.vn"}
+            },
+            new String [] {
+                "ID", "Title", "Credits", "Dep ID", "URL"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        OnlineCourse_CourseList_Table.setAlignmentX(0.0F);
+        OnlineCourse_CourseList_Table.setAlignmentY(0.0F);
+        OnlineCourse_CourseList_Table.setFocusable(false);
+        OnlineCourse_CourseList_Table.setGridColor(new java.awt.Color(204, 204, 204));
+        OnlineCourse_CourseList_Table.setOpaque(false);
+        OnlineCourse_CourseList_Table.setRowHeight(30);
+        OnlineCourse_CourseList_Table.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        OnlineCourse_CourseList_Table.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        OnlineCourse_CourseList_Table.setShowGrid(true);
+        OnlineCourse_CourseList_Table.setShowHorizontalLines(false);
+        OnlineCourse_CourseList_Table.setShowVerticalLines(false);
+        jScrollPane6.setViewportView(OnlineCourse_CourseList_Table);
+        if (OnlineCourse_CourseList_Table.getColumnModel().getColumnCount() > 0) {
+            OnlineCourse_CourseList_Table.getColumnModel().getColumn(0).setPreferredWidth(10);
+            OnlineCourse_CourseList_Table.getColumnModel().getColumn(1).setPreferredWidth(100);
+            OnlineCourse_CourseList_Table.getColumnModel().getColumn(2).setPreferredWidth(10);
+            OnlineCourse_CourseList_Table.getColumnModel().getColumn(3).setPreferredWidth(10);
+            OnlineCourse_CourseList_Table.getColumnModel().getColumn(4).setPreferredWidth(150);
+        }
+
         javax.swing.GroupLayout jPanel87Layout = new javax.swing.GroupLayout(jPanel87);
         jPanel87.setLayout(jPanel87Layout);
         jPanel87Layout.setHorizontalGroup(
@@ -1088,18 +1140,18 @@ public class CourseManager extends javax.swing.JFrame {
             .addGroup(jPanel87Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
                     .addGroup(jPanel87Layout.createSequentialGroup()
                         .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel87Layout.createSequentialGroup()
-                                .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(OnlineCourse_FullTable_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel88, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(OnlineCourse_Search_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(OnlineCourse_Refresh_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
+                            .addComponent(OnlineCourse_Refresh_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel87Layout.setVerticalGroup(
@@ -1115,8 +1167,8 @@ public class CourseManager extends javax.swing.JFrame {
                     .addComponent(OnlineCourse_Search_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(jPanel88, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(306, 306, 306))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel74Layout = new javax.swing.GroupLayout(jPanel74);
@@ -1140,7 +1192,7 @@ public class CourseManager extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane3.addTab("ONLINE", jPanel74);
+        jTabbedPane3.addTab("ONLINE COURSE", jPanel74);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1189,6 +1241,7 @@ public class CourseManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("Convert2Lambda")
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1202,6 +1255,7 @@ public class CourseManager extends javax.swing.JFrame {
         }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new CourseManager().setVisible(true);
             }
@@ -1292,7 +1346,7 @@ public class CourseManager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel87;
     private javax.swing.JPanel jPanel88;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
     // End of variables declaration//GEN-END:variables
