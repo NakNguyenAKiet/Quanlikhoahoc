@@ -8,10 +8,10 @@ import java.util.logging.Logger;
 
 public class Connection {
     public java.sql.Connection con;  
+    private final String dbPath = "jdbc:mysql://localhost: 3306/school?useUnicode=yes&characterEncoding=UTF-8";
     
     public boolean openConnection(){
         try {
-            String dbPath = "jdbc:mysql://localhost: 3306/school?useUnicode=yes&characterEncoding=UTF-8";
             con = DriverManager.getConnection(dbPath, "root", "");
             return true;
         } catch (SQLException ex) {
