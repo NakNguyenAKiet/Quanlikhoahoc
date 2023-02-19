@@ -437,7 +437,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel22" alignment="0" pref="330" max="32767" attributes="0"/>
                                               <Component id="jPanel61" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -486,17 +486,14 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnsiteCourse_Title_TextField" pref="308" max="32767" attributes="0"/>
+                                              <Component id="OnsiteCourse_Title_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnsiteCourse_Title_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnsiteCourse_Title_TextField" alignment="0" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -508,10 +505,6 @@
                                         </Property>
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
-                                        </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
-                                        <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="0" green="0" red="0" type="rgb"/>
                                         </Property>
                                       </Properties>
                                     </Component>
@@ -584,17 +577,14 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnsiteCourse_Credits_TextField" pref="308" max="32767" attributes="0"/>
+                                              <Component id="OnsiteCourse_Credits_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnsiteCourse_Credits_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnsiteCourse_Credits_TextField" alignment="0" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -607,7 +597,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -685,10 +674,7 @@
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnsiteCourse_DepartmentID_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnsiteCourse_DepartmentID_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -701,7 +687,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -773,7 +758,7 @@
                                   <Layout>
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="OnsiteCourse_Location_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -782,10 +767,7 @@
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnsiteCourse_Location_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnsiteCourse_Location_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -798,7 +780,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -926,19 +907,16 @@
                                   <Layout>
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnsiteCourse_Time_TextField" pref="0" max="32767" attributes="0"/>
+                                              <Component id="OnsiteCourse_Time_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnsiteCourse_Time_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnsiteCourse_Time_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -951,7 +929,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -1022,17 +999,14 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnsiteCourse_Days_TextField" pref="138" max="32767" attributes="0"/>
+                                              <Component id="OnsiteCourse_Days_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnsiteCourse_Days_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnsiteCourse_Days_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -1045,7 +1019,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -1209,7 +1182,6 @@
                                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                       <Border info="null"/>
                                     </Property>
-                                    <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                   </Properties>
                                 </Component>
                               </SubComponents>
@@ -1470,7 +1442,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel30" alignment="0" pref="330" max="32767" attributes="0"/>
                                               <Component id="jPanel80" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1519,17 +1491,14 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnlineCourse_Title_TextField" pref="308" max="32767" attributes="0"/>
+                                              <Component id="OnlineCourse_Title_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnlineCourse_Title_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnlineCourse_Title_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -1542,7 +1511,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -1612,19 +1580,16 @@
                                   <Layout>
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnlineCourse_Credits_TextField" pref="308" max="32767" attributes="0"/>
+                                              <Component id="OnlineCourse_Credits_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnlineCourse_Credits_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnlineCourse_Credits_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -1637,7 +1602,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -1707,19 +1671,16 @@
                                   <Layout>
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnlineCourse_DepartmentID_TextField" pref="308" max="32767" attributes="0"/>
+                                              <Component id="OnlineCourse_DepartmentID_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnlineCourse_DepartmentID_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnlineCourse_DepartmentID_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -1732,7 +1693,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -1802,24 +1762,21 @@
                                   <Layout>
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="OnlineCourse_URL_TextField" pref="308" max="32767" attributes="0"/>
+                                              <Component id="OnlineCourse_Url_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="OnlineCourse_URL_TextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OnlineCourse_Url_TextField" alignment="1" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
                                   <SubComponents>
-                                    <Component class="javax.swing.JTextField" name="OnlineCourse_URL_TextField">
+                                    <Component class="javax.swing.JTextField" name="OnlineCourse_Url_TextField">
                                       <Properties>
                                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                           <Font name="Tahoma" size="13" style="0"/>
@@ -1827,7 +1784,6 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
-                                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -2025,7 +1981,7 @@
                               <Layout>
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="OnlineCourse_Search_TextField" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -2034,7 +1990,7 @@
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="OnlineCourse_Search_TextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="OnlineCourse_Search_TextField" alignment="1" pref="33" max="32767" attributes="0"/>
                                   </Group>
                                 </DimensionLayout>
                               </Layout>
@@ -2047,7 +2003,6 @@
                                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                       <Border info="null"/>
                                     </Property>
-                                    <Property name="requestFocusEnabled" type="boolean" value="false"/>
                                   </Properties>
                                 </Component>
                               </SubComponents>

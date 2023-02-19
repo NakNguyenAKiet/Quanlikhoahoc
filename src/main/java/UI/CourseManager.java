@@ -91,7 +91,7 @@ public class CourseManager extends javax.swing.JFrame {
         jPanel85 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jPanel86 = new javax.swing.JPanel();
-        OnlineCourse_URL_TextField = new javax.swing.JTextField();
+        OnlineCourse_Url_TextField = new javax.swing.JTextField();
         OnlineCourse_Create_Button = new javax.swing.JButton();
         OnlineCourse_Update_Button = new javax.swing.JButton();
         OnlineCourse_Delete_Button = new javax.swing.JButton();
@@ -230,8 +230,6 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnsiteCourse_Title_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnsiteCourse_Title_TextField.setBorder(null);
-        OnsiteCourse_Title_TextField.setRequestFocusEnabled(false);
-        OnsiteCourse_Title_TextField.setSelectedTextColor(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel61Layout = new javax.swing.GroupLayout(jPanel61);
         jPanel61.setLayout(jPanel61Layout);
@@ -239,14 +237,12 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel61Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnsiteCourse_Title_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addComponent(OnsiteCourse_Title_TextField)
                 .addContainerGap())
         );
         jPanel61Layout.setVerticalGroup(
             jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel61Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnsiteCourse_Title_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnsiteCourse_Title_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
@@ -256,7 +252,7 @@ public class CourseManager extends javax.swing.JFrame {
             .addGroup(jPanel60Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
                     .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -281,7 +277,6 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnsiteCourse_Credits_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnsiteCourse_Credits_TextField.setBorder(null);
-        OnsiteCourse_Credits_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel63Layout = new javax.swing.GroupLayout(jPanel63);
         jPanel63.setLayout(jPanel63Layout);
@@ -289,14 +284,12 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel63Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnsiteCourse_Credits_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addComponent(OnsiteCourse_Credits_TextField)
                 .addContainerGap())
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel63Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnsiteCourse_Credits_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnsiteCourse_Credits_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel62Layout = new javax.swing.GroupLayout(jPanel62);
@@ -331,7 +324,6 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnsiteCourse_DepartmentID_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnsiteCourse_DepartmentID_TextField.setBorder(null);
-        OnsiteCourse_DepartmentID_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel65Layout = new javax.swing.GroupLayout(jPanel65);
         jPanel65.setLayout(jPanel65Layout);
@@ -344,9 +336,7 @@ public class CourseManager extends javax.swing.JFrame {
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel65Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnsiteCourse_DepartmentID_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnsiteCourse_DepartmentID_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel64Layout = new javax.swing.GroupLayout(jPanel64);
@@ -380,22 +370,19 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnsiteCourse_Location_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnsiteCourse_Location_TextField.setBorder(null);
-        OnsiteCourse_Location_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel67Layout = new javax.swing.GroupLayout(jPanel67);
         jPanel67.setLayout(jPanel67Layout);
         jPanel67Layout.setHorizontalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel67Layout.createSequentialGroup()
+            .addGroup(jPanel67Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(OnsiteCourse_Location_TextField)
                 .addContainerGap())
         );
         jPanel67Layout.setVerticalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel67Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnsiteCourse_Location_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnsiteCourse_Location_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel66Layout = new javax.swing.GroupLayout(jPanel66);
@@ -451,22 +438,19 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnsiteCourse_Time_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnsiteCourse_Time_TextField.setBorder(null);
-        OnsiteCourse_Time_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
         jPanel69.setLayout(jPanel69Layout);
         jPanel69Layout.setHorizontalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel69Layout.createSequentialGroup()
+            .addGroup(jPanel69Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnsiteCourse_Time_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(OnsiteCourse_Time_TextField)
                 .addContainerGap())
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel69Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnsiteCourse_Time_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnsiteCourse_Time_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel68Layout = new javax.swing.GroupLayout(jPanel68);
@@ -502,7 +486,6 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnsiteCourse_Days_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnsiteCourse_Days_TextField.setBorder(null);
-        OnsiteCourse_Days_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel71Layout = new javax.swing.GroupLayout(jPanel71);
         jPanel71.setLayout(jPanel71Layout);
@@ -510,14 +493,12 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel71Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnsiteCourse_Days_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                .addComponent(OnsiteCourse_Days_TextField)
                 .addContainerGap())
         );
         jPanel71Layout.setVerticalGroup(
             jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel71Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnsiteCourse_Days_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnsiteCourse_Days_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
@@ -638,7 +619,6 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnsiteCourse_Search_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnsiteCourse_Search_TextField.setBorder(null);
-        OnsiteCourse_Search_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel73Layout = new javax.swing.GroupLayout(jPanel73);
         jPanel73.setLayout(jPanel73Layout);
@@ -797,7 +777,6 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnlineCourse_Title_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnlineCourse_Title_TextField.setBorder(null);
-        OnlineCourse_Title_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel80Layout = new javax.swing.GroupLayout(jPanel80);
         jPanel80.setLayout(jPanel80Layout);
@@ -805,14 +784,12 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel80Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnlineCourse_Title_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addComponent(OnlineCourse_Title_TextField)
                 .addContainerGap())
         );
         jPanel80Layout.setVerticalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel80Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnlineCourse_Title_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnlineCourse_Title_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel79Layout = new javax.swing.GroupLayout(jPanel79);
@@ -822,7 +799,7 @@ public class CourseManager extends javax.swing.JFrame {
             .addGroup(jPanel79Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
                     .addComponent(jPanel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -847,22 +824,19 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnlineCourse_Credits_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnlineCourse_Credits_TextField.setBorder(null);
-        OnlineCourse_Credits_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel82Layout = new javax.swing.GroupLayout(jPanel82);
         jPanel82.setLayout(jPanel82Layout);
         jPanel82Layout.setHorizontalGroup(
             jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel82Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel82Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnlineCourse_Credits_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addComponent(OnlineCourse_Credits_TextField)
                 .addContainerGap())
         );
         jPanel82Layout.setVerticalGroup(
             jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel82Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnlineCourse_Credits_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnlineCourse_Credits_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel81Layout = new javax.swing.GroupLayout(jPanel81);
@@ -897,22 +871,19 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnlineCourse_DepartmentID_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnlineCourse_DepartmentID_TextField.setBorder(null);
-        OnlineCourse_DepartmentID_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel84Layout = new javax.swing.GroupLayout(jPanel84);
         jPanel84.setLayout(jPanel84Layout);
         jPanel84Layout.setHorizontalGroup(
             jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel84Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel84Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnlineCourse_DepartmentID_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addComponent(OnlineCourse_DepartmentID_TextField)
                 .addContainerGap())
         );
         jPanel84Layout.setVerticalGroup(
             jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel84Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnlineCourse_DepartmentID_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnlineCourse_DepartmentID_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel83Layout = new javax.swing.GroupLayout(jPanel83);
@@ -945,24 +916,21 @@ public class CourseManager extends javax.swing.JFrame {
         jPanel86.setBackground(new java.awt.Color(255, 255, 255));
         jPanel86.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
 
-        OnlineCourse_URL_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        OnlineCourse_URL_TextField.setBorder(null);
-        OnlineCourse_URL_TextField.setRequestFocusEnabled(false);
+        OnlineCourse_Url_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        OnlineCourse_Url_TextField.setBorder(null);
 
         javax.swing.GroupLayout jPanel86Layout = new javax.swing.GroupLayout(jPanel86);
         jPanel86.setLayout(jPanel86Layout);
         jPanel86Layout.setHorizontalGroup(
             jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel86Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel86Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(OnlineCourse_URL_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addComponent(OnlineCourse_Url_TextField)
                 .addContainerGap())
         );
         jPanel86Layout.setVerticalGroup(
             jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel86Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(OnlineCourse_URL_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(OnlineCourse_Url_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel85Layout = new javax.swing.GroupLayout(jPanel85);
@@ -1093,20 +1061,19 @@ public class CourseManager extends javax.swing.JFrame {
 
         OnlineCourse_Search_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         OnlineCourse_Search_TextField.setBorder(null);
-        OnlineCourse_Search_TextField.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel88Layout = new javax.swing.GroupLayout(jPanel88);
         jPanel88.setLayout(jPanel88Layout);
         jPanel88Layout.setHorizontalGroup(
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel88Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel88Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(OnlineCourse_Search_TextField)
                 .addContainerGap())
         );
         jPanel88Layout.setVerticalGroup(
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(OnlineCourse_Search_TextField)
+            .addComponent(OnlineCourse_Search_TextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
         );
 
         OnlineCourse_Search_Button.setBackground(new java.awt.Color(0, 0, 0));
@@ -1254,8 +1221,8 @@ public class CourseManager extends javax.swing.JFrame {
     private javax.swing.JButton OnlineCourse_Search_Button;
     private javax.swing.JTextField OnlineCourse_Search_TextField;
     private javax.swing.JTextField OnlineCourse_Title_TextField;
-    private javax.swing.JTextField OnlineCourse_URL_TextField;
     private javax.swing.JButton OnlineCourse_Update_Button;
+    private javax.swing.JTextField OnlineCourse_Url_TextField;
     private javax.swing.JTable OnsiteCourse_CourseList_Table;
     private javax.swing.JButton OnsiteCourse_Create_Button;
     private javax.swing.JTextField OnsiteCourse_Credits_TextField;
@@ -1290,8 +1257,6 @@ public class CourseManager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel49;
-    private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel57;
