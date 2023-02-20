@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DTO;
 
-/**
- *
- * @author nakng
- */
 public class Course {
 
+    private int CourseID;
+    private int Credits;
+    private int DepartmentID;
+    private String Tilte;
+    
     public Course(int CourseID, int Credits, int DepartmentID, String Tilte) {
         this.CourseID = CourseID;
         this.Credits = Credits;
@@ -17,8 +14,6 @@ public class Course {
         this.Tilte = Tilte;
     }
 
-    
-    
     public int getCourseID() {
         return CourseID;
     }
@@ -51,13 +46,11 @@ public class Course {
         this.Tilte = Tilte;
     }
     
-    private int CourseID;
-    private int Credits;
-    private int DepartmentID;
-    private String Tilte;
-
-    
-
     public Course() {
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" + "CourseID=" + CourseID + ", Credits=" + Credits + ", DepartmentID=" + DepartmentID + ", Tilte=" + Tilte + '}';
     }
 }

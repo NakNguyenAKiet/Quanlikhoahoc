@@ -3,6 +3,8 @@ package Utils;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,17 +17,39 @@ public class Validate {
     private static Matcher matcher;
     private static String regex;
 
-    public boolean validateID(int id, String tableName) throws SQLException {
-        String query = "SELECT COUNT(*) FROM " + tableName + " WHERE id = ?";
-        pstmt = connection.con.prepareStatement(query);
-        pstmt.setInt(1, id);
-        rs = pstmt.executeQuery();
-        if (rs.next() && rs.getInt(1) > 0) {
-            if (id > 0) {
-                return true;
+    public boolean checkIdExists(int id, String tableName, String idColumnName) {
+        boolean result = false;
+        if (connection.openConnection()) {
+            try {
+                String sql = "SELECT COUNT(*) FROM " + tableName + " WHERE " + idColumnName +" = ?";
+                pstmt = connection.con.prepareStatement(sql);
+                pstmt.setInt(1, id);
+                rs = pstmt.executeQuery();
+                if (rs.next() && rs.getInt(1) > 0) {
+                    result = true;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Validate.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                connection.closeConnection();
             }
         }
-        return false;
+        return result;
+    }
+
+    public boolean isValidID(String id) {
+        if (id == null || id.trim().isEmpty()) {
+            return false;
+        }
+        try {
+            int idValue = Integer.parseInt(id);
+            if (idValue <= 0) {
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
     }
 
     public boolean validateCredits(String credits) {
@@ -51,7 +75,7 @@ public class Validate {
         return location != null && location.trim().length() >= 2;
     }
 
-    public static boolean validateURL(String url) {
+    public boolean validateURL(String url) {
         regex = "^(http|https)://([\\w-]+\\.)+[\\w-]+(/[\\w-./?%&=]*)?$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(url);

@@ -1,14 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DTO;
 
-/**
- *
- * @author nakng
- */
-public class Onsitecourse {
+public class Onsitecourse extends Course{
     private int CourseID;
     private String Location;
     private String Days;
@@ -56,4 +48,8 @@ public class Onsitecourse {
     public Onsitecourse() {
     }
 
+    @Override
+    public String toString() {
+        return "Onsitecourse{" + "CourseID=" + CourseID + ", Location=" + Location + ", Days=" + Days + ", Time=" + Time + '}';
+    }
 }

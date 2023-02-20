@@ -1,21 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DTO;
 
-/**
- *
- * @author nakng
- */
-public class Onlinecourse {
-     private int CourseID;
-          private String Url;
+public class Onlinecourse extends Course{
+    private int CourseID;
+    private String Url;
 
+    @Override
     public int getCourseID() {
         return CourseID;
     }
 
+    @Override
     public void setCourseID(int CourseID) {
         this.CourseID = CourseID;
     }
@@ -36,4 +30,10 @@ public class Onlinecourse {
     public Onlinecourse() {
     }
 
+    @Override
+    public String toString() {
+        return "Onlinecourse{" + "CourseID=" + CourseID + ", Url=" + Url + '}';
+    }
+
+    
 }

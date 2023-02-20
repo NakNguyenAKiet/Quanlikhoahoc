@@ -7,10 +7,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Connection {
-    public java.sql.Connection con;  
+
+    public java.sql.Connection con;
     private final String dbPath = "jdbc:mysql://localhost: 3306/school?useUnicode=yes&characterEncoding=UTF-8";
-    
-    public boolean openConnection(){
+
+    public boolean openConnection() {
         try {
             con = DriverManager.getConnection(dbPath, "root", "");
             return true;
@@ -19,9 +20,9 @@ public class Connection {
             return false;
         }
     }
-    
-    public void closeConnection(){
-        if(con!=null){
+
+    public void closeConnection() {
+        if (con != null) {
             try {
                 con.close();
             } catch (SQLException ex) {
