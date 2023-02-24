@@ -13,7 +13,7 @@ public class Connection {
 
     public boolean openConnection() {
         try {
-            con = DriverManager.getConnection(dbPath, "root", "");
+            con = DriverManager.getConnection(dbPath, "root", "");            
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);

@@ -9,6 +9,7 @@ package DTO;
  * @author nakng
  */
 public class Person {
+
     private int PersonID;
     private String Firstname;
     private String Lastname;
@@ -34,6 +35,10 @@ public class Person {
     public String getLastname() {
         return Lastname;
     }
+    
+    public String getFullName() {
+        return Firstname.concat(" ").concat(Lastname);
+    }
 
     public void setLastname(String Lastname) {
         this.Lastname = Lastname;
@@ -55,6 +60,11 @@ public class Person {
         this.EnrollmentDate = EnrollmentDate;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" + "PersonID=" + PersonID + ", Firstname=" + Firstname + ", Lastname=" + Lastname + ", HireDay=" + HireDay + ", EnrollmentDate=" + EnrollmentDate + '}';
+    }
+
     public Person(int PersonID, String Firstname, String Lastname, String HireDay, String EnrollmentDate) {
         this.PersonID = PersonID;
         this.Firstname = Firstname;
@@ -65,6 +75,5 @@ public class Person {
 
     public Person() {
     }
-
 
 }
