@@ -1,37 +1,64 @@
 package UI;
 
+import BLL.CourseBLL;
 import BLL.OnlinecourseBLL;
 import BLL.OnsitecourseBLL;
+import BLL.PersonBLL;
+import BLL.StudentgradeBLL;
 import Utils.CustomTable;
+import Utils.Validate;
 import java.awt.Color;
+import java.text.DecimalFormat;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
 public class CourseManager extends javax.swing.JFrame {
-  
+
     private static final CustomTable customTable = new CustomTable();
-    
-    /* ================================== Online course object ================================== */    
-    private static final OnlinecourseBLL onlineCourseBLL = new OnlinecourseBLL();  
-    
-    /* ================================== Onsite course object ================================== */    
+
+    /* ================================== Online course object ================================== */
+    private static final OnlinecourseBLL onlineCourseBLL = new OnlinecourseBLL();
+
+    /* ================================== Onsite course object ================================== */
     private static final OnsitecourseBLL onsiteCourseBLL = new OnsitecourseBLL();
+
+    /* ================================== student grade object ================================== */
+    private static final StudentgradeBLL studengradeBLL = new StudentgradeBLL();
+
+    private static final PersonBLL personBLL = new PersonBLL();
     
+    private static final CourseBLL courseBLL = new CourseBLL();
+
     @SuppressWarnings("OverridableMethodCallInConstructor")
     public CourseManager() {
         initComponents();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        
+
         customTable.customJTable(OnsiteCourse_CourseList_Table);
         customTable.customJTable(OnlineCourse_CourseList_Table);
         onlineCourseBLL.displayOnlineCoursesInTable(OnlineCourse_CourseList_Table);
         onsiteCourseBLL.displayOnsiteCoursesInTable(OnsiteCourse_CourseList_Table);
-    }
+
+        customTable.customJTable(Studentgrade_Courses_Table);
+        studengradeBLL.displayGradeOfCoursesInTable(Studentgrade_Courses_Table, studentgrade_studentName_ltitle, -1);
+
+        customTable.customJTable(Studentgrade_StudentList_Table);
+        personBLL.displayStudentListInTable(Studentgrade_StudentList_Table);
+        Studentgrade_StudentList_Table.setRowSelectionInterval(0, 0);
         
-    
+        customTable.customJTable(Studentgrade_courseList_Table);
+        courseBLL.displayAllCoursesInTable(Studentgrade_courseList_Table);
+        
+        customTable.customJTable(Studentgrade_studentGrade_Table);
+        courseBLL.displayAllCoursesInTable(Studentgrade_courseList_Table);        
+        Studentgrade_courseList_Table.setRowSelectionInterval(0, 0);
+        studengradeBLL.displayGradeOfStudentInTable(Studentgrade_studentGrade_Table, studentgrade_courseName_ltitle, -1);
+    }
+
     @SuppressWarnings("unchecked")
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -39,6 +66,37 @@ public class CourseManager extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jPanel89 = new javax.swing.JPanel();
+        jPanel90 = new javax.swing.JPanel();
+        jPanel91 = new javax.swing.JPanel();
+        jPanel92 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        Studentgrade_StudentList_Table = new javax.swing.JTable();
+        jLabel42 = new javax.swing.JLabel();
+        jPanel123 = new javax.swing.JPanel();
+        studentlist_searchStudent_input = new javax.swing.JTextField();
+        Studentgrade_studentList_search_btn = new javax.swing.JButton();
+        jPanel106 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Studentgrade_Courses_Table = new javax.swing.JTable();
+        studentgrade_studentName_ltitle = new javax.swing.JLabel();
+        OnsiteCourse_Update_Button1 = new javax.swing.JButton();
+        jPanel108 = new javax.swing.JPanel();
+        jPanel93 = new javax.swing.JPanel();
+        jPanel94 = new javax.swing.JPanel();
+        jPanel95 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        Studentgrade_courseList_Table = new javax.swing.JTable();
+        jLabel49 = new javax.swing.JLabel();
+        jPanel124 = new javax.swing.JPanel();
+        studentlist_searchCourse_input = new javax.swing.JTextField();
+        Studentgrade_courseList_search_btn = new javax.swing.JButton();
+        jPanel107 = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        Studentgrade_studentGrade_Table = new javax.swing.JTable();
+        studentgrade_courseName_ltitle = new javax.swing.JLabel();
+        Studentgrade_UpdateStudentGrade_Button = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -136,15 +194,556 @@ public class CourseManager extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 153, 153));
 
+        jTabbedPane4.setForeground(new java.awt.Color(0, 102, 255));
+        jTabbedPane4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTabbedPane4.setOpaque(true);
+
+        jPanel90.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel90.setPreferredSize(new java.awt.Dimension(400, 0));
+
+        javax.swing.GroupLayout jPanel91Layout = new javax.swing.GroupLayout(jPanel91);
+        jPanel91.setLayout(jPanel91Layout);
+        jPanel91Layout.setHorizontalGroup(
+            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel91Layout.setVerticalGroup(
+            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 487, Short.MAX_VALUE)
+        );
+
+        jPanel92.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel92.setPreferredSize(new java.awt.Dimension(350, 100));
+
+        Studentgrade_StudentList_Table.setAutoCreateRowSorter(true);
+        Studentgrade_StudentList_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "No", "ID", "Name"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        Studentgrade_StudentList_Table.setGridColor(new java.awt.Color(204, 204, 204));
+        Studentgrade_StudentList_Table.setOpaque(false);
+        Studentgrade_StudentList_Table.setRowHeight(30);
+        Studentgrade_StudentList_Table.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        Studentgrade_StudentList_Table.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        Studentgrade_StudentList_Table.setShowGrid(false);
+        Studentgrade_StudentList_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Studentgrade_StudentList_TableMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(Studentgrade_StudentList_Table);
+        if (Studentgrade_StudentList_Table.getColumnModel().getColumnCount() > 0) {
+            Studentgrade_StudentList_Table.getColumnModel().getColumn(0).setPreferredWidth(5);
+            Studentgrade_StudentList_Table.getColumnModel().getColumn(1).setPreferredWidth(10);
+            Studentgrade_StudentList_Table.getColumnModel().getColumn(2).setPreferredWidth(100);
+        }
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel42.setText("STUDENT LIST");
+
+        jPanel123.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel123.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+
+        studentlist_searchStudent_input.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        studentlist_searchStudent_input.setBorder(null);
+        studentlist_searchStudent_input.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                studentlist_searchStudent_inputCaretUpdate(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel123Layout = new javax.swing.GroupLayout(jPanel123);
+        jPanel123.setLayout(jPanel123Layout);
+        jPanel123Layout.setHorizontalGroup(
+            jPanel123Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel123Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentlist_searchStudent_input, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel123Layout.setVerticalGroup(
+            jPanel123Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(studentlist_searchStudent_input, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        Studentgrade_studentList_search_btn.setBackground(new java.awt.Color(0, 0, 0));
+        Studentgrade_studentList_search_btn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Studentgrade_studentList_search_btn.setForeground(new java.awt.Color(255, 255, 255));
+        Studentgrade_studentList_search_btn.setText("SEARCH");
+        Studentgrade_studentList_search_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Studentgrade_studentList_search_btnMouseClicked(evt);
+            }
+        });
+        Studentgrade_studentList_search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Studentgrade_studentList_search_btnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel92Layout = new javax.swing.GroupLayout(jPanel92);
+        jPanel92.setLayout(jPanel92Layout);
+        jPanel92Layout.setHorizontalGroup(
+            jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel92Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel92Layout.createSequentialGroup()
+                        .addComponent(jPanel123, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Studentgrade_studentList_search_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel92Layout.createSequentialGroup()
+                        .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                        .addGap(120, 120, 120))))
+            .addGroup(jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel92Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanel92Layout.setVerticalGroup(
+            jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel92Layout.createSequentialGroup()
+                .addComponent(jLabel42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Studentgrade_studentList_search_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jPanel123, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel92Layout.createSequentialGroup()
+                    .addGap(74, 74, 74)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout jPanel90Layout = new javax.swing.GroupLayout(jPanel90);
+        jPanel90.setLayout(jPanel90Layout);
+        jPanel90Layout.setHorizontalGroup(
+            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel90Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel92, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jPanel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel90Layout.setVerticalGroup(
+            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel90Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel90Layout.createSequentialGroup()
+                        .addComponent(jPanel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(jPanel92, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)))
+        );
+
+        jPanel106.setBackground(new java.awt.Color(255, 255, 255));
+
+        Studentgrade_Courses_Table.setAutoCreateRowSorter(true);
+        Studentgrade_Courses_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Index", "ID", "Title", "Grade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        Studentgrade_Courses_Table.setGridColor(new java.awt.Color(204, 204, 204));
+        Studentgrade_Courses_Table.setOpaque(false);
+        Studentgrade_Courses_Table.setRowHeight(30);
+        Studentgrade_Courses_Table.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        Studentgrade_Courses_Table.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        Studentgrade_Courses_Table.setShowGrid(false);
+        Studentgrade_Courses_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Studentgrade_Courses_TableMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(Studentgrade_Courses_Table);
+        if (Studentgrade_Courses_Table.getColumnModel().getColumnCount() > 0) {
+            Studentgrade_Courses_Table.getColumnModel().getColumn(0).setPreferredWidth(5);
+            Studentgrade_Courses_Table.getColumnModel().getColumn(1).setPreferredWidth(10);
+            Studentgrade_Courses_Table.getColumnModel().getColumn(2).setPreferredWidth(100);
+            Studentgrade_Courses_Table.getColumnModel().getColumn(3).setPreferredWidth(10);
+        }
+
+        studentgrade_studentName_ltitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        studentgrade_studentName_ltitle.setForeground(new java.awt.Color(0, 153, 153));
+        studentgrade_studentName_ltitle.setText("COURSE GRADE");
+
+        OnsiteCourse_Update_Button1.setBackground(new java.awt.Color(255, 255, 0));
+        OnsiteCourse_Update_Button1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        OnsiteCourse_Update_Button1.setForeground(new java.awt.Color(255, 255, 255));
+        OnsiteCourse_Update_Button1.setText("UPDATE GRADE");
+        OnsiteCourse_Update_Button1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OnsiteCourse_Update_Button1MouseClicked(evt);
+            }
+        });
+        OnsiteCourse_Update_Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OnsiteCourse_Update_Button1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel106Layout = new javax.swing.GroupLayout(jPanel106);
+        jPanel106.setLayout(jPanel106Layout);
+        jPanel106Layout.setHorizontalGroup(
+            jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel106Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel106Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(OnsiteCourse_Update_Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel106Layout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addComponent(studentgrade_studentName_ltitle, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(118, Short.MAX_VALUE)))
+        );
+        jPanel106Layout.setVerticalGroup(
+            jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel106Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(OnsiteCourse_Update_Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel106Layout.createSequentialGroup()
+                    .addGap(24, 24, 24)
+                    .addComponent(studentgrade_studentName_ltitle)
+                    .addContainerGap(464, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel89Layout = new javax.swing.GroupLayout(jPanel89);
+        jPanel89.setLayout(jPanel89Layout);
+        jPanel89Layout.setHorizontalGroup(
+            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel89Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel90, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel106, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel89Layout.setVerticalGroup(
+            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel89Layout.createSequentialGroup()
+                .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel90, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                    .addComponent(jPanel106, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTabbedPane4.addTab("PERSONAL", jPanel89);
+
+        jPanel93.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel93.setPreferredSize(new java.awt.Dimension(400, 0));
+
+        javax.swing.GroupLayout jPanel94Layout = new javax.swing.GroupLayout(jPanel94);
+        jPanel94.setLayout(jPanel94Layout);
+        jPanel94Layout.setHorizontalGroup(
+            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel94Layout.setVerticalGroup(
+            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 487, Short.MAX_VALUE)
+        );
+
+        jPanel95.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel95.setPreferredSize(new java.awt.Dimension(350, 100));
+
+        Studentgrade_courseList_Table.setAutoCreateRowSorter(true);
+        Studentgrade_courseList_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "No", "ID", "Title"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        Studentgrade_courseList_Table.setGridColor(new java.awt.Color(204, 204, 204));
+        Studentgrade_courseList_Table.setOpaque(false);
+        Studentgrade_courseList_Table.setRowHeight(30);
+        Studentgrade_courseList_Table.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        Studentgrade_courseList_Table.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        Studentgrade_courseList_Table.setShowGrid(false);
+        Studentgrade_courseList_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Studentgrade_courseList_TableMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(Studentgrade_courseList_Table);
+        if (Studentgrade_courseList_Table.getColumnModel().getColumnCount() > 0) {
+            Studentgrade_courseList_Table.getColumnModel().getColumn(0).setPreferredWidth(5);
+            Studentgrade_courseList_Table.getColumnModel().getColumn(1).setPreferredWidth(10);
+            Studentgrade_courseList_Table.getColumnModel().getColumn(2).setPreferredWidth(100);
+        }
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel49.setText("COURSE LIST");
+
+        jPanel124.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel124.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+
+        studentlist_searchCourse_input.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        studentlist_searchCourse_input.setBorder(null);
+        studentlist_searchCourse_input.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                studentlist_searchCourse_inputCaretUpdate(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel124Layout = new javax.swing.GroupLayout(jPanel124);
+        jPanel124.setLayout(jPanel124Layout);
+        jPanel124Layout.setHorizontalGroup(
+            jPanel124Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel124Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentlist_searchCourse_input)
+                .addContainerGap())
+        );
+        jPanel124Layout.setVerticalGroup(
+            jPanel124Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(studentlist_searchCourse_input, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        Studentgrade_courseList_search_btn.setBackground(new java.awt.Color(0, 0, 0));
+        Studentgrade_courseList_search_btn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Studentgrade_courseList_search_btn.setForeground(new java.awt.Color(255, 255, 255));
+        Studentgrade_courseList_search_btn.setText("SEARCH");
+        Studentgrade_courseList_search_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Studentgrade_courseList_search_btnMouseClicked(evt);
+            }
+        });
+        Studentgrade_courseList_search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Studentgrade_courseList_search_btnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel95Layout = new javax.swing.GroupLayout(jPanel95);
+        jPanel95.setLayout(jPanel95Layout);
+        jPanel95Layout.setHorizontalGroup(
+            jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel95Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel124, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
+                .addComponent(Studentgrade_courseList_search_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel95Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanel95Layout.setVerticalGroup(
+            jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel95Layout.createSequentialGroup()
+                .addComponent(jLabel49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Studentgrade_courseList_search_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jPanel124, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel95Layout.createSequentialGroup()
+                    .addGap(74, 74, 74)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout jPanel93Layout = new javax.swing.GroupLayout(jPanel93);
+        jPanel93.setLayout(jPanel93Layout);
+        jPanel93Layout.setHorizontalGroup(
+            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel93Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel95, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jPanel94, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel93Layout.setVerticalGroup(
+            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel93Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel93Layout.createSequentialGroup()
+                        .addComponent(jPanel94, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(jPanel95, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)))
+        );
+
+        jPanel107.setBackground(new java.awt.Color(255, 255, 255));
+
+        Studentgrade_studentGrade_Table.setAutoCreateRowSorter(true);
+        Studentgrade_studentGrade_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "No", "ID", "Name", "Grade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        Studentgrade_studentGrade_Table.setGridColor(new java.awt.Color(204, 204, 204));
+        Studentgrade_studentGrade_Table.setOpaque(false);
+        Studentgrade_studentGrade_Table.setRowHeight(30);
+        Studentgrade_studentGrade_Table.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        Studentgrade_studentGrade_Table.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        Studentgrade_studentGrade_Table.setShowGrid(false);
+        Studentgrade_studentGrade_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Studentgrade_studentGrade_TableMouseClicked(evt);
+            }
+        });
+        jScrollPane10.setViewportView(Studentgrade_studentGrade_Table);
+        if (Studentgrade_studentGrade_Table.getColumnModel().getColumnCount() > 0) {
+            Studentgrade_studentGrade_Table.getColumnModel().getColumn(0).setPreferredWidth(5);
+            Studentgrade_studentGrade_Table.getColumnModel().getColumn(1).setPreferredWidth(10);
+            Studentgrade_studentGrade_Table.getColumnModel().getColumn(2).setPreferredWidth(100);
+            Studentgrade_studentGrade_Table.getColumnModel().getColumn(3).setPreferredWidth(10);
+        }
+
+        studentgrade_courseName_ltitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        studentgrade_courseName_ltitle.setForeground(new java.awt.Color(0, 153, 153));
+        studentgrade_courseName_ltitle.setText("STUDENT GRADE");
+
+        Studentgrade_UpdateStudentGrade_Button.setBackground(new java.awt.Color(255, 255, 0));
+        Studentgrade_UpdateStudentGrade_Button.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Studentgrade_UpdateStudentGrade_Button.setForeground(new java.awt.Color(255, 255, 255));
+        Studentgrade_UpdateStudentGrade_Button.setText("UPDATE GRADE");
+        Studentgrade_UpdateStudentGrade_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Studentgrade_UpdateStudentGrade_ButtonMouseClicked(evt);
+            }
+        });
+        Studentgrade_UpdateStudentGrade_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Studentgrade_UpdateStudentGrade_ButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel107Layout = new javax.swing.GroupLayout(jPanel107);
+        jPanel107.setLayout(jPanel107Layout);
+        jPanel107Layout.setHorizontalGroup(
+            jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel107Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel107Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Studentgrade_UpdateStudentGrade_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel107Layout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addComponent(studentgrade_courseName_ltitle, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(118, Short.MAX_VALUE)))
+        );
+        jPanel107Layout.setVerticalGroup(
+            jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel107Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(Studentgrade_UpdateStudentGrade_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel107Layout.createSequentialGroup()
+                    .addGap(24, 24, 24)
+                    .addComponent(studentgrade_courseName_ltitle)
+                    .addContainerGap(464, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel108Layout = new javax.swing.GroupLayout(jPanel108);
+        jPanel108.setLayout(jPanel108Layout);
+        jPanel108Layout.setHorizontalGroup(
+            jPanel108Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel108Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel93, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel107, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel108Layout.setVerticalGroup(
+            jPanel108Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel108Layout.createSequentialGroup()
+                .addGroup(jPanel108Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel93, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                    .addComponent(jPanel107, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTabbedPane4.addTab("COURSE", jPanel108);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 920, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane4)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 569, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane4)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("STUDENT GRADE", jPanel4);
@@ -155,7 +754,7 @@ public class CourseManager extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 920, Short.MAX_VALUE)
+            .addGap(0, 895, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -655,8 +1254,11 @@ public class CourseManager extends javax.swing.JFrame {
             OnsiteCourse_CourseList_Table.getColumnModel().getColumn(2).setPreferredWidth(10);
             OnsiteCourse_CourseList_Table.getColumnModel().getColumn(3).setPreferredWidth(10);
             OnsiteCourse_CourseList_Table.getColumnModel().getColumn(4).setPreferredWidth(10);
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(4).setHeaderValue("Location");
             OnsiteCourse_CourseList_Table.getColumnModel().getColumn(5).setPreferredWidth(20);
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(5).setHeaderValue("Days");
             OnsiteCourse_CourseList_Table.getColumnModel().getColumn(6).setPreferredWidth(20);
+            OnsiteCourse_CourseList_Table.getColumnModel().getColumn(6).setHeaderValue("Time");
         }
 
         OnsiteCourse_Refresh_Button.setBackground(new java.awt.Color(102, 102, 255));
@@ -710,7 +1312,7 @@ public class CourseManager extends javax.swing.JFrame {
             .addGroup(jPanel72Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
                     .addGroup(jPanel72Layout.createSequentialGroup()
                         .addGroup(jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel72Layout.createSequentialGroup()
@@ -1202,14 +1804,14 @@ public class CourseManager extends javax.swing.JFrame {
                     .addGroup(jPanel87Layout.createSequentialGroup()
                         .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel87Layout.createSequentialGroup()
-                                .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                                 .addGap(129, 129, 129))
                             .addComponent(jPanel88, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(OnlineCourse_Search_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(OnlineCourse_Refresh_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel87Layout.setVerticalGroup(
@@ -1296,29 +1898,28 @@ public class CourseManager extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    /* ================================================================ ONLINE COURSE ================================================================ */  
- 
-    
-    /* ================================== Handle create online course ================================== */  
+    /* ================================================================ ONLINE COURSE ================================================================ */
+
+ /* ================================== Handle create online course ================================== */
     private void OnlineCourse_Create_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnlineCourse_Create_ButtonActionPerformed
         String error = onlineCourseBLL.handleCreateOnlineCourse(OnlineCourse_ID_TextField, OnlineCourse_Title_TextField, OnlineCourse_Credits_TextField, OnlineCourse_DepartmentID_TextField, OnlineCourse_Url_TextField);
-        if(error != null) {
+        if (error != null) {
             JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Online course created successfully", "Success", JOptionPane.INFORMATION_MESSAGE);       
+            JOptionPane.showMessageDialog(this, "Online course created successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
             onlineCourseBLL.displayOnlineCoursesInTable(OnlineCourse_CourseList_Table);
         }
     }//GEN-LAST:event_OnlineCourse_Create_ButtonActionPerformed
-    /* ================================== Handle click JTABLE online course ================================== */  
+    /* ================================== Handle click JTABLE online course ================================== */
     private void OnlineCourse_CourseList_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnlineCourse_CourseList_TableMouseClicked
         OnlineCourse_ID_TextField.setEditable(false);
         OnlineCourse_ID_TextField.setBackground(Color.WHITE);
         int row = OnlineCourse_CourseList_Table.getSelectedRow();
         int courseID = (int) OnlineCourse_CourseList_Table.getModel().getValueAt(row, 0);
         String error = onlineCourseBLL.handleSelectedOnlineCourse(courseID, OnlineCourse_ID_TextField, OnlineCourse_Title_TextField, OnlineCourse_Credits_TextField, OnlineCourse_DepartmentID_TextField, OnlineCourse_Url_TextField);
-        if(error != null) {
+        if (error != null) {
             JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
-        } 
+        }
     }//GEN-LAST:event_OnlineCourse_CourseList_TableMouseClicked
     /* ================================== Handle delete online course ================================== */
     private void OnlineCourse_Delete_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnlineCourse_Delete_ButtonActionPerformed
@@ -1329,18 +1930,18 @@ public class CourseManager extends javax.swing.JFrame {
                 int row = OnlineCourse_CourseList_Table.getSelectedRow();
                 int courseID = (int) OnlineCourse_CourseList_Table.getModel().getValueAt(row, 0);
                 String error = onlineCourseBLL.handleDeleteOnlineCourse(courseID, OnlineCourse_ID_TextField, OnlineCourse_Title_TextField, OnlineCourse_Credits_TextField, OnlineCourse_DepartmentID_TextField, OnlineCourse_Url_TextField);
-                if(error != null) {
+                if (error != null) {
                     JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Delete the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);  
+                    JOptionPane.showMessageDialog(this, "Delete the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                     onlineCourseBLL.displayOnlineCoursesInTable(OnlineCourse_CourseList_Table);
                 }
-            } 
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Please select a course on the table to delete", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_OnlineCourse_Delete_ButtonActionPerformed
-    
+
     /* ================================== Handle update online course ================================== */
     private void OnlineCourse_Update_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnlineCourse_Update_ButtonActionPerformed
         int selectedRow = OnlineCourse_CourseList_Table.getSelectedRow();
@@ -1350,13 +1951,13 @@ public class CourseManager extends javax.swing.JFrame {
                 int row = OnlineCourse_CourseList_Table.getSelectedRow();
                 int courseID = (int) OnlineCourse_CourseList_Table.getModel().getValueAt(row, 0);
                 String error = onlineCourseBLL.handleUpdateOnlineCourse(courseID, OnlineCourse_ID_TextField, OnlineCourse_Title_TextField, OnlineCourse_Credits_TextField, OnlineCourse_DepartmentID_TextField, OnlineCourse_Url_TextField);
-                if(error != null) {
+                if (error != null) {
                     JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Update the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);  
+                    JOptionPane.showMessageDialog(this, "Update the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                     onlineCourseBLL.displayOnlineCoursesInTable(OnlineCourse_CourseList_Table);
                 }
-            } 
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Please select a course on the table to update", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -1378,31 +1979,28 @@ public class CourseManager extends javax.swing.JFrame {
         onlineCourseBLL.displayOnlineCoursesInTable(OnlineCourse_CourseList_Table);
     }//GEN-LAST:event_OnlineCourse_Refresh_ButtonActionPerformed
 
-    
     /* ================================================================ ONSITE COURSE ================================================================ */
-    
-    
-    /* ================================== Handle create onsite course ================================== */  
+ /* ================================== Handle create onsite course ================================== */
     private void OnsiteCourse_Create_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnsiteCourse_Create_ButtonActionPerformed
         String error = onsiteCourseBLL.handleCreateOnsiteCourse(OnsiteCourse_ID_TextField, OnsiteCourse_Title_TextField, OnsiteCourse_Credits_TextField, OnsiteCourse_DepartmentID_TextField, OnsiteCourse_Location_TextField, OnsiteCourse_Days_TextField, OnsiteCourse_Time_TextField);
-        if(error != null) {
+        if (error != null) {
             JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Onsite course created successfully", "Success", JOptionPane.INFORMATION_MESSAGE);       
+            JOptionPane.showMessageDialog(this, "Onsite course created successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
             onsiteCourseBLL.displayOnsiteCoursesInTable(OnsiteCourse_CourseList_Table);
         }
     }//GEN-LAST:event_OnsiteCourse_Create_ButtonActionPerformed
 
-    /* ================================== Handle click JTABLE onsite course ================================== */ 
+    /* ================================== Handle click JTABLE onsite course ================================== */
     private void OnsiteCourse_CourseList_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnsiteCourse_CourseList_TableMouseClicked
         OnsiteCourse_ID_TextField.setEditable(false);
         OnsiteCourse_ID_TextField.setBackground(Color.WHITE);
         int row = OnsiteCourse_CourseList_Table.getSelectedRow();
         int courseID = (int) OnsiteCourse_CourseList_Table.getModel().getValueAt(row, 0);
         String error = onsiteCourseBLL.handleSelectedOnsiteCourse(courseID, OnsiteCourse_ID_TextField, OnsiteCourse_Title_TextField, OnsiteCourse_Credits_TextField, OnsiteCourse_DepartmentID_TextField, OnsiteCourse_Location_TextField, OnsiteCourse_Days_TextField, OnsiteCourse_Time_TextField);
-        if(error != null) {
+        if (error != null) {
             JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
-        } 
+        }
     }//GEN-LAST:event_OnsiteCourse_CourseList_TableMouseClicked
 
     /* ================================== Handle delete onsite course ================================== */
@@ -1414,13 +2012,13 @@ public class CourseManager extends javax.swing.JFrame {
                 int row = OnsiteCourse_CourseList_Table.getSelectedRow();
                 int courseID = (int) OnsiteCourse_CourseList_Table.getModel().getValueAt(row, 0);
                 String error = onsiteCourseBLL.handleDeleteOnsiteCourse(courseID, OnsiteCourse_ID_TextField, OnsiteCourse_Title_TextField, OnsiteCourse_Credits_TextField, OnsiteCourse_DepartmentID_TextField, OnsiteCourse_Location_TextField, OnsiteCourse_Days_TextField, OnsiteCourse_Time_TextField);
-                if(error != null) {
+                if (error != null) {
                     JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Delete the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);  
+                    JOptionPane.showMessageDialog(this, "Delete the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                     onsiteCourseBLL.displayOnsiteCoursesInTable(OnsiteCourse_CourseList_Table);
                 }
-            } 
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Please select a course on the table to delete", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -1435,18 +2033,18 @@ public class CourseManager extends javax.swing.JFrame {
                 int row = OnsiteCourse_CourseList_Table.getSelectedRow();
                 int courseID = (int) OnsiteCourse_CourseList_Table.getModel().getValueAt(row, 0);
                 String error = onsiteCourseBLL.handleUpdateOnsiteCourse(courseID, OnsiteCourse_ID_TextField, OnsiteCourse_Title_TextField, OnsiteCourse_Credits_TextField, OnsiteCourse_DepartmentID_TextField, OnsiteCourse_Location_TextField, OnsiteCourse_Days_TextField, OnsiteCourse_Time_TextField);
-                if(error != null) {
+                if (error != null) {
                     JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Update the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);  
+                    JOptionPane.showMessageDialog(this, "Update the course successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                     onsiteCourseBLL.displayOnsiteCoursesInTable(OnsiteCourse_CourseList_Table);
                 }
-            } 
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Please select a course on the table to update", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_OnsiteCourse_Update_ButtonActionPerformed
-    
+
     /* ================================== Handle reset onsite course ================================== */
     private void OnsiteCourse_Reset_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnsiteCourse_Reset_ButtonActionPerformed
         onsiteCourseBLL.handleResetOnsiteCourse(OnsiteCourse_ID_TextField, OnsiteCourse_Title_TextField, OnsiteCourse_Credits_TextField, OnsiteCourse_DepartmentID_TextField, OnsiteCourse_Location_TextField, OnsiteCourse_Days_TextField, OnsiteCourse_Time_TextField);
@@ -1465,12 +2063,152 @@ public class CourseManager extends javax.swing.JFrame {
         onsiteCourseBLL.displayOnsiteCoursesInTable(OnsiteCourse_CourseList_Table);
     }//GEN-LAST:event_OnsiteCourse_Refresh_ButtonActionPerformed
 
-    
-    
-    
-    
-    
-    
+    private void OnsiteCourse_Update_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnsiteCourse_Update_Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OnsiteCourse_Update_Button1ActionPerformed
+
+    private void Studentgrade_Courses_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studentgrade_Courses_TableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Studentgrade_Courses_TableMouseClicked
+
+    private void Studentgrade_studentList_search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Studentgrade_studentList_search_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Studentgrade_studentList_search_btnActionPerformed
+
+    private void Studentgrade_StudentList_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studentgrade_StudentList_TableMouseClicked
+        int row = Studentgrade_StudentList_Table.getSelectedRow();
+        int studentID = (int) Studentgrade_StudentList_Table.getModel().getValueAt(row, 1);
+        studengradeBLL.displayGradeOfCoursesInTable(Studentgrade_Courses_Table, studentgrade_studentName_ltitle, studentID);
+//        JOptionPane.showMessageDialog(this, studentID, "Error", JOptionPane.ERROR_MESSAGE);
+//        String error = onsiteCourseBLL.handleSelectedOnsiteCourse(courseID, OnsiteCourse_ID_TextField, OnsiteCourse_Title_TextField, OnsiteCourse_Credits_TextField, OnsiteCourse_DepartmentID_TextField, OnsiteCourse_Location_TextField, OnsiteCourse_Days_TextField, OnsiteCourse_Time_TextField);
+//        if(error != null) {
+//            JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+//        } 
+    }//GEN-LAST:event_Studentgrade_StudentList_TableMouseClicked
+
+    private void Studentgrade_studentList_search_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studentgrade_studentList_search_btnMouseClicked
+        String keyWord = studentlist_searchStudent_input.getText().trim();
+        if (!keyWord.isEmpty()) {
+            personBLL.displayStudentListInTableBySearchFunction(Studentgrade_StudentList_Table, keyWord);
+        }
+    }//GEN-LAST:event_Studentgrade_studentList_search_btnMouseClicked
+
+    private void studentlist_searchStudent_inputCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_studentlist_searchStudent_inputCaretUpdate
+        String keyWord = studentlist_searchStudent_input.getText().trim();
+        if (keyWord.isEmpty()) {
+            personBLL.displayStudentListInTable(Studentgrade_StudentList_Table);
+        } else {
+            personBLL.displayStudentListInTableBySearchFunction(Studentgrade_StudentList_Table, keyWord);
+        }
+    }//GEN-LAST:event_studentlist_searchStudent_inputCaretUpdate
+
+    private void OnsiteCourse_Update_Button1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OnsiteCourse_Update_Button1MouseClicked
+        // Update student grade
+        int rowStudent = Studentgrade_StudentList_Table.getSelectedRow();
+        int rowCourse = Studentgrade_Courses_Table.getSelectedRow();
+        if (rowStudent == -1 || rowCourse == -1) {
+            if (rowStudent == -1) {
+                JOptionPane.showMessageDialog(this, "Please, choose a student yout want to update grade!", "Alert", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Please, choose a course yout want to update grade!", "Alert", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            int studentID = (int) Studentgrade_StudentList_Table.getModel().getValueAt(rowStudent, 1);
+            String studentName = (String) Studentgrade_StudentList_Table.getModel().getValueAt(rowStudent, 2);
+            int courseID = (int) Studentgrade_Courses_Table.getModel().getValueAt(rowCourse, 1);
+            String courseTitle = (String) Studentgrade_Courses_Table.getModel().getValueAt(rowCourse, 2);
+            String input = JOptionPane.showInputDialog(this,
+                    "Enter Grade of Course: " + courseTitle,
+                    "Edit Grade of Student: " + studentName,
+                    JOptionPane.INFORMATION_MESSAGE);
+            Validate validate = new Validate();
+            if (validate.isNumeric(input)) {
+                // Insert grade to DB   
+//                Float grade = Float.parseFloat(input);
+                String grade = String.format("%.02f", Float.parseFloat(input));
+                if (studengradeBLL.updateGrade(studentID, courseID, grade)) {
+                    JOptionPane.showMessageDialog(this, "The grade had updated!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    Studentgrade_Courses_Table.getModel().setValueAt(grade, rowCourse, 3);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Fail to update grade!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "The grade must be numeric!", "Alert", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_OnsiteCourse_Update_Button1MouseClicked
+
+    private void Studentgrade_courseList_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studentgrade_courseList_TableMouseClicked
+        // Click cousre
+        int row = Studentgrade_courseList_Table.getSelectedRow();
+        int courseID = (int) Studentgrade_courseList_Table.getModel().getValueAt(row, 1);
+        studengradeBLL.displayGradeOfStudentInTable(Studentgrade_studentGrade_Table, studentgrade_courseName_ltitle, courseID);
+    }//GEN-LAST:event_Studentgrade_courseList_TableMouseClicked
+
+    private void studentlist_searchCourse_inputCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_studentlist_searchCourse_inputCaretUpdate
+        // Search course
+        String keyWord = studentlist_searchCourse_input.getText().trim();
+        if (keyWord.isEmpty()) {
+            courseBLL.displayAllCoursesInTable(Studentgrade_courseList_Table);
+        } else {
+            courseBLL.displayStudentListInTableBySearchFunction(Studentgrade_courseList_Table, keyWord);
+        }
+    }//GEN-LAST:event_studentlist_searchCourse_inputCaretUpdate
+
+    private void Studentgrade_courseList_search_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studentgrade_courseList_search_btnMouseClicked
+        String keyWord = studentlist_searchCourse_input.getText().trim();
+        if (!keyWord.isEmpty()) {
+            courseBLL.displayStudentListInTableBySearchFunction(Studentgrade_courseList_Table, keyWord);
+        }
+    }//GEN-LAST:event_Studentgrade_courseList_search_btnMouseClicked
+
+    private void Studentgrade_courseList_search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Studentgrade_courseList_search_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Studentgrade_courseList_search_btnActionPerformed
+
+    private void Studentgrade_studentGrade_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studentgrade_studentGrade_TableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Studentgrade_studentGrade_TableMouseClicked
+
+    private void Studentgrade_UpdateStudentGrade_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Studentgrade_UpdateStudentGrade_ButtonMouseClicked
+        int rowStudent = Studentgrade_studentGrade_Table.getSelectedRow();
+        int rowCourse = Studentgrade_courseList_Table.getSelectedRow();
+        if (rowStudent == -1 || rowCourse == -1) {
+            if (rowStudent == -1) {
+                JOptionPane.showMessageDialog(this, "Please, choose a student yout want to update grade!", "Alert", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Please, choose a course yout want to update grade!", "Alert", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            int studentID = (int) Studentgrade_studentGrade_Table.getModel().getValueAt(rowStudent, 1);
+            String studentName = (String) Studentgrade_studentGrade_Table.getModel().getValueAt(rowStudent, 2);
+            int courseID = (int) Studentgrade_courseList_Table.getModel().getValueAt(rowCourse, 1);
+            String courseTitle = (String) Studentgrade_courseList_Table.getModel().getValueAt(rowCourse, 2);
+            String input = JOptionPane.showInputDialog(this,
+                    "Enter Grade of Student: " + studentName,
+                    "Edit Grade of Course: " + courseTitle,
+                    JOptionPane.INFORMATION_MESSAGE);
+            Validate validate = new Validate();
+            if (validate.isNumeric(input)) {
+                // Insert grade to DB   
+//                Float grade = Float.parseFloat(input);
+                String grade = String.format("%.02f", Float.parseFloat(input));
+                if (studengradeBLL.updateGrade(studentID, courseID, grade)) {
+                    JOptionPane.showMessageDialog(this, "The grade had updated!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    Studentgrade_studentGrade_Table.getModel().setValueAt(grade, rowCourse, 3);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Fail to update grade!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "The grade must be numeric!", "Alert", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_Studentgrade_UpdateStudentGrade_ButtonMouseClicked
+
+    private void Studentgrade_UpdateStudentGrade_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Studentgrade_UpdateStudentGrade_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Studentgrade_UpdateStudentGrade_ButtonActionPerformed
+
     @SuppressWarnings("Convert2Lambda")
     public static void main(String args[]) {
         try {
@@ -1483,7 +2221,7 @@ public class CourseManager extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CourseManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             @SuppressWarnings("override")
             public void run() {
@@ -1521,6 +2259,14 @@ public class CourseManager extends javax.swing.JFrame {
     private javax.swing.JTextField OnsiteCourse_Time_TextField;
     private javax.swing.JTextField OnsiteCourse_Title_TextField;
     private javax.swing.JButton OnsiteCourse_Update_Button;
+    private javax.swing.JButton OnsiteCourse_Update_Button1;
+    private javax.swing.JTable Studentgrade_Courses_Table;
+    private javax.swing.JTable Studentgrade_StudentList_Table;
+    private javax.swing.JButton Studentgrade_UpdateStudentGrade_Button;
+    private javax.swing.JTable Studentgrade_courseList_Table;
+    private javax.swing.JButton Studentgrade_courseList_search_btn;
+    private javax.swing.JTable Studentgrade_studentGrade_Table;
+    private javax.swing.JButton Studentgrade_studentList_search_btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1536,7 +2282,14 @@ public class CourseManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel106;
+    private javax.swing.JPanel jPanel107;
+    private javax.swing.JPanel jPanel108;
+    private javax.swing.JPanel jPanel123;
+    private javax.swing.JPanel jPanel124;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1574,9 +2327,25 @@ public class CourseManager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel86;
     private javax.swing.JPanel jPanel87;
     private javax.swing.JPanel jPanel88;
+    private javax.swing.JPanel jPanel89;
+    private javax.swing.JPanel jPanel90;
+    private javax.swing.JPanel jPanel91;
+    private javax.swing.JPanel jPanel92;
+    private javax.swing.JPanel jPanel93;
+    private javax.swing.JPanel jPanel94;
+    private javax.swing.JPanel jPanel95;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JLabel studentgrade_courseName_ltitle;
+    private javax.swing.JLabel studentgrade_studentName_ltitle;
+    private javax.swing.JTextField studentlist_searchCourse_input;
+    private javax.swing.JTextField studentlist_searchStudent_input;
     // End of variables declaration//GEN-END:variables
 }

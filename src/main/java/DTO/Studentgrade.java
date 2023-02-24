@@ -9,6 +9,7 @@ package DTO;
  * @author nakng
  */
 public class Studentgrade {
+
     private int EnrollmentID;
     private int CourseID;
     private int StudentID;
@@ -46,6 +47,11 @@ public class Studentgrade {
         this.Grade = Grade;
     }
 
+    @Override
+    public String toString() {
+        return "Studentgrade{" + "EnrollmentID=" + EnrollmentID + ", CourseID=" + CourseID + ", StudentID=" + StudentID + ", Grade=" + Grade + '}';
+    }
+
     public Studentgrade(int EnrollmentID, int CourseID, int StudentID, String Grade) {
         this.EnrollmentID = EnrollmentID;
         this.CourseID = CourseID;
@@ -55,6 +61,5 @@ public class Studentgrade {
 
     public Studentgrade() {
     }
-
 
 }

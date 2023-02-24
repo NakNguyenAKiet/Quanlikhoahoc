@@ -115,4 +115,9 @@ public class Validate {
         }
         return true;
     }
+    
+    public boolean isNumeric(String str){
+        str = str.trim();
+        return str != null && str.matches("[0-9.]+");
+    }
 }
