@@ -1,5 +1,6 @@
 UI\CourseManager$15.class
 DAL\StudentgradeDAL.class
+UI\CourseManager$45.class
 DTO\Studentgrade.class
 UI\CourseManager$35.class
 BLL\CourseBLL.class
@@ -20,6 +21,7 @@ UI\CourseManager$29.class
 UI\CourseManager$31.class
 UI\CourseManager$11.class
 UI\CourseManager$5.class
+UI\CourseManager$46.class
 UI\CourseManager$18.class
 UI\CourseManager$38.class
 DAL\CourseDAL.class
@@ -51,6 +53,7 @@ UI\CourseManager$44.class
 DTO\Officeassignment.class
 UI\CourseManager$3.class
 DTO\Onlinecourse.class
+DTO\CourseInstructorExtended.class
 UI\CourseManager$19.class
 DAL\OnlinecourseDAL.class
 UI\CourseManager$39.class

@@ -90,4 +90,15 @@ public class CourseInstructorBLL {
         }
         return error;
     }
+
+    public String handleUpdateCourseInstructor(int courseID, int personID, JTextField Title, JTextField FirstName, JTextField LastName, JTextField CourseID, JTextField PersonID) {
+        String error = null;      
+        boolean result = CourseInstructorDAL.updateCourseInstructor(courseID, personID, Integer.parseInt(CourseID.getText()), Integer.parseInt(PersonID.getText()));
+        if (result) {
+            handleResetCourseInstructor(Title, FirstName, LastName, CourseID, PersonID);
+        } else {
+            error = "An error occurred while updating the course instructor, please try again later";
+        }
+        return error;
+    }
 }

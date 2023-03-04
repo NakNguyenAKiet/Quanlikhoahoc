@@ -437,7 +437,7 @@ public class CourseManager extends javax.swing.JFrame {
         studentgrade_studentName_ltitle.setForeground(new java.awt.Color(0, 153, 153));
         studentgrade_studentName_ltitle.setText("COURSE GRADE");
 
-        OnsiteCourse_Update_Button1.setBackground(new java.awt.Color(255, 255, 0));
+        OnsiteCourse_Update_Button1.setBackground(new java.awt.Color(255, 51, 255));
         OnsiteCourse_Update_Button1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         OnsiteCourse_Update_Button1.setForeground(new java.awt.Color(255, 255, 255));
         OnsiteCourse_Update_Button1.setText("UPDATE GRADE");
@@ -1238,7 +1238,7 @@ public class CourseManager extends javax.swing.JFrame {
             }
         });
 
-        CourseIntructor_Update_Button.setBackground(new java.awt.Color(255, 255, 0));
+        CourseIntructor_Update_Button.setBackground(new java.awt.Color(255, 51, 255));
         CourseIntructor_Update_Button.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CourseIntructor_Update_Button.setForeground(new java.awt.Color(255, 255, 255));
         CourseIntructor_Update_Button.setText("UPDATE");
@@ -2210,7 +2210,7 @@ public class CourseManager extends javax.swing.JFrame {
             }
         });
 
-        OnlineCourse_Update_Button.setBackground(new java.awt.Color(255, 255, 0));
+        OnlineCourse_Update_Button.setBackground(new java.awt.Color(255, 51, 255));
         OnlineCourse_Update_Button.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         OnlineCourse_Update_Button.setForeground(new java.awt.Color(255, 255, 255));
         OnlineCourse_Update_Button.setText("UPDATE");
@@ -2828,6 +2828,25 @@ public class CourseManager extends javax.swing.JFrame {
 
     private void CourseIntructor_Update_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CourseIntructor_Update_ButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRow = CourseInstructor_List_Table1.getSelectedRow();
+        if (selectedRow != -1) {
+            int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to update this course instructor?", "Yes", JOptionPane.YES_NO_OPTION);
+            if (confirm == JOptionPane.YES_OPTION) {
+                int rowID = CourseInstructor_List_Table1.getSelectedRow();
+                int courseID = (int) CourseInstructor_List_Table1.getModel().getValueAt(rowID, 1);
+                int personID = (int) CourseInstructor_List_Table1.getModel().getValueAt(rowID, 3);
+                String error = courseInstructorBLL.handleUpdateCourseInstructor(courseID, personID, CourseIntructor_Title_TextField, CourseIntructor_FirstName_TextField, CourseIntructor_LastName_TextField, CourseIntructor_CourseID_TextField, CourseIntructor_PersonID_TextField);
+                if (error != null) {
+                    JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Update the course instructor successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    courseInstructorBLL.dipslayDetailsCourseInstructorListInTable(CourseInstructor_List_Table1);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a course instructor on the table to update", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_CourseIntructor_Update_ButtonActionPerformed
 
     private void CourseIntructor_Delete_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CourseIntructor_Delete_ButtonActionPerformed

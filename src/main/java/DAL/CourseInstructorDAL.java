@@ -15,6 +15,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 /**
  *
  * @author ADMIN
@@ -26,27 +27,27 @@ public class CourseInstructorDAL {
     private static ResultSet rs;
     private static final Connection connection = new Connection();
 
-//    public ArrayList<Courseinstructor> getAllCourseInstructor() {
-//        ArrayList<Courseinstructor> list = new ArrayList<>();
-//        if (connection.openConnection()) {
-//            try {
-//                sql = "select * from courseinstructor";
-//                stm = connection.con.createStatement();
-//                rs = stm.executeQuery(sql);
-//                while (rs.next()) {
-//                    Courseinstructor courseIntructor = new Courseinstructor();
-//                    courseIntructor.setCourseID(rs.getInt("CourseID"));
-//                    courseIntructor.setPersonID(rs.getInt("PersonID"));
-//                    list.add(courseIntructor);
-//                }
-//            } catch (SQLException ex) {
-//                Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);
-//            } finally {
-//                connection.closeConnection();
-//            }
-//        }
-//        return list;
-//    }
+    public ArrayList<Courseinstructor> getAllCourseInstructor() {
+        ArrayList<Courseinstructor> list = new ArrayList<>();
+        if (connection.openConnection()) {
+            try {
+                sql = "select * from courseinstructor";
+                stm = connection.con.createStatement();
+                rs = stm.executeQuery(sql);
+                while (rs.next()) {
+                    Courseinstructor courseIntructor = new Courseinstructor();
+                    courseIntructor.setCourseID(rs.getInt("CourseID"));
+                    courseIntructor.setPersonID(rs.getInt("PersonID"));
+                    list.add(courseIntructor);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                connection.closeConnection();
+            }
+        }
+        return list;
+    }
     
     public ArrayList<CourseInstructorExtended> getDetailsCourseInstructor() {
         ArrayList<CourseInstructorExtended> list = new ArrayList<>();
@@ -74,55 +75,6 @@ public class CourseInstructorDAL {
         }
         return list;
     }
-//    public Courseinstructor getCourseByID(int id) {
-//        Courseinstructor course = new Courseinstructor();
-//        if (connection.openConnection()) {
-//            try {
-//                sql = "select * from course where CourseID = ?";
-//                pstmt = connection.con.prepareStatement(sql);
-//                pstmt.setInt(1, id);
-//                rs = pstmt.executeQuery();
-//                while (rs.next()) {
-//                    course.setCourseID(rs.getInt("CourseID"));
-//                    course.setCredits(rs.getInt("Credits"));
-//                    course.setTilte(rs.getNString("Title"));
-//                    course.setDepartmentID(rs.getInt("DepartmentID"));
-//                }
-//            } catch (SQLException ex) {
-//                Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);
-//            } finally {
-//                connection.closeConnection();
-//            }
-//        }
-//        return course;
-//    }
-//    
-//    public ArrayList<Course> getCoursesBySearchFunction(String keyword) {
-//        ArrayList<Course> list = new ArrayList<>();
-//        if (connection.openConnection()) {
-//            try {
-//                sql = "select * from course where CourseID LIKE ? OR Title LIKE ?";
-//                pstmt = connection.con.prepareStatement(sql);
-//                pstmt.setString(1, "%"+keyword+"%");
-//                pstmt.setString(2, "%"+keyword+"%");                
-//                rs = pstmt.executeQuery();
-//                while (rs.next()) {
-//                    Course acc = new Course();
-//                    acc.setCourseID(rs.getInt("CourseID"));
-//                    acc.setCredits(rs.getInt("Credits"));
-//                    acc.setTilte(rs.getNString("Title"));
-//                    acc.setDepartmentID(rs.getInt("DepartmentID"));
-//                    list.add(acc);
-//                }
-//            } catch (SQLException ex) {
-//                Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);
-//            } finally {
-//                connection.closeConnection();
-//            }
-//        }
-//        return list;
-//    }
-
     public ArrayList<CourseInstructorExtended> getDetailsCourseInstructorBySearch(String keyWord) {
         ArrayList<CourseInstructorExtended> list = new ArrayList<>();
         if (connection.openConnection()) {
@@ -165,6 +117,30 @@ public class CourseInstructorDAL {
                 pstmtDeleteCourseInstructor.setInt(1, courseID);
                 pstmtDeleteCourseInstructor.setInt(2, personID);
                 int rowsAffected = pstmtDeleteCourseInstructor.executeUpdate();
+                if (rowsAffected > 0) {
+                    result = true;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                connection.closeConnection();
+            }
+        }
+        return result;
+    }
+
+    public boolean updateCourseInstructor(int courseIDOld, int personIDOld, int CourseIDNew, int PersonIDNew) {
+        boolean result = false;
+        if (connection.openConnection()) {
+            try {
+                sql = "UPDATE courseinstructor SET CourseID = ?, PersonID = ? WHERE CourseID = ? AND PersonID = ?";
+                pstmt = connection.con.prepareStatement(sql);
+                pstmt.setInt(1, CourseIDNew);//NEW VALUE
+                pstmt.setInt(2, PersonIDNew);//NEW VALUE
+                pstmt.setInt(3, courseIDOld);//OLD
+                pstmt.setInt(4, personIDOld);//OLD
+                int rowsAffected = pstmt.executeUpdate();
+                pstmt.close();
                 if (rowsAffected > 0) {
                     result = true;
                 }
