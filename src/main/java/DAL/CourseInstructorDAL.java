@@ -152,4 +152,26 @@ public class CourseInstructorDAL {
         }
         return result;
     }
+
+    public boolean createCourseIntructor(Courseinstructor Courseinstructor) {
+        boolean result = false;
+        if (connection.openConnection()) {
+            try {
+                sql = "INSERT INTO courseinstructor (CourseID, PersonID) VALUES (?, ?)";
+                pstmt = connection.con.prepareStatement(sql);
+                pstmt.setInt(1, Courseinstructor.getCourseID());
+                pstmt.setInt(2, Courseinstructor.getPersonID());
+                int rowsAffected = pstmt.executeUpdate();
+                pstmt.close();
+                if (rowsAffected > 0) {
+                    result = true;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CourseDAL.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                connection.closeConnection();
+            }
+        }
+        return result;
+    }
 }

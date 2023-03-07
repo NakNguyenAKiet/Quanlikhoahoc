@@ -865,8 +865,8 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel125Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel125Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CourseInstructor_Search_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(CourseInstructor_Search_TextField)
+                .addContainerGap())
         );
         jPanel125Layout.setVerticalGroup(
             jPanel125Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -896,9 +896,9 @@ public class CourseManager extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel99Layout.createSequentialGroup()
-                        .addComponent(jPanel125, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CourseInstructor_Search_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel125, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CourseInstructor_Search_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanel99Layout.createSequentialGroup()
                         .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
@@ -985,7 +985,7 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel103Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel103Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CourseIntructor_CourseID_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                .addComponent(CourseIntructor_CourseID_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel103Layout.setVerticalGroup(
@@ -1026,6 +1026,7 @@ public class CourseManager extends javax.swing.JFrame {
         CourseIntructor_Title_TextField.setEditable(false);
         CourseIntructor_Title_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         CourseIntructor_Title_TextField.setBorder(null);
+        CourseIntructor_Title_TextField.setEnabled(false);
 
         javax.swing.GroupLayout jPanel105Layout = new javax.swing.GroupLayout(jPanel105);
         jPanel105.setLayout(jPanel105Layout);
@@ -1085,7 +1086,7 @@ public class CourseManager extends javax.swing.JFrame {
             CourseIntructor_PersonID_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CourseIntructor_PersonID_PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CourseIntructor_PersonID_TextField)
+                .addComponent(CourseIntructor_PersonID_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                 .addContainerGap())
         );
         CourseIntructor_PersonID_PanelLayout.setVerticalGroup(
@@ -1127,6 +1128,7 @@ public class CourseManager extends javax.swing.JFrame {
         CourseIntructor_FirstName_TextField.setEditable(false);
         CourseIntructor_FirstName_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         CourseIntructor_FirstName_TextField.setBorder(null);
+        CourseIntructor_FirstName_TextField.setEnabled(false);
 
         javax.swing.GroupLayout jPanel113Layout = new javax.swing.GroupLayout(jPanel113);
         jPanel113.setLayout(jPanel113Layout);
@@ -1134,7 +1136,7 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel113Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel113Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CourseIntructor_FirstName_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                .addComponent(CourseIntructor_FirstName_TextField)
                 .addContainerGap())
         );
         jPanel113Layout.setVerticalGroup(
@@ -1174,6 +1176,7 @@ public class CourseManager extends javax.swing.JFrame {
         CourseIntructor_LastName_TextField.setEditable(false);
         CourseIntructor_LastName_TextField.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         CourseIntructor_LastName_TextField.setBorder(null);
+        CourseIntructor_LastName_TextField.setEnabled(false);
 
         javax.swing.GroupLayout jPanel115Layout = new javax.swing.GroupLayout(jPanel115);
         jPanel115.setLayout(jPanel115Layout);
@@ -1181,7 +1184,7 @@ public class CourseManager extends javax.swing.JFrame {
             jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel115Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CourseIntructor_LastName_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                .addComponent(CourseIntructor_LastName_TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel115Layout.setVerticalGroup(
@@ -1256,29 +1259,26 @@ public class CourseManager extends javax.swing.JFrame {
                 .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel100Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
+                        .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel114, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel102, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel110, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(jPanel112, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)))
+                    .addGroup(jPanel100Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CourseIntructor_Update_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CourseIntructor_Create_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel100Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(CourseIntructor_Update_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(CourseIntructor_Create_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CourseIntructor_Delete_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CourseIntructor_Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel100Layout.createSequentialGroup()
-                                .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jPanel102, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel114, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPanel112, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                    .addComponent(jPanel110, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))))
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel100Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel104, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                            .addComponent(CourseIntructor_Delete_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CourseIntructor_Reset_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel100Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel104, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(25, 25, 25)
                 .addComponent(jPanel101, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel100Layout.setVerticalGroup(
@@ -2824,6 +2824,13 @@ public class CourseManager extends javax.swing.JFrame {
 
     private void CourseIntructor_Create_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CourseIntructor_Create_ButtonActionPerformed
         // TODO add your handling code here:
+        String error = courseInstructorBLL.handleCreateCourseIntructor(CourseIntructor_Title_TextField, CourseIntructor_FirstName_TextField, CourseIntructor_LastName_TextField, CourseIntructor_CourseID_TextField, CourseIntructor_PersonID_TextField);
+        if (error != null) {
+            JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Course intructor created successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            courseInstructorBLL.dipslayDetailsCourseInstructorListInTable(CourseInstructor_List_Table1);
+        }
     }//GEN-LAST:event_CourseIntructor_Create_ButtonActionPerformed
 
     private void CourseIntructor_Update_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CourseIntructor_Update_ButtonActionPerformed

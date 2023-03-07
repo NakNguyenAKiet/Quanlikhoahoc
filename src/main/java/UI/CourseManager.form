@@ -1144,13 +1144,13 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jPanel125" min="-2" pref="216" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="CourseInstructor_Search_Button" max="32767" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jPanel125" max="32767" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="CourseInstructor_Search_Button" min="-2" pref="183" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
                                                   <Component id="jLabel43" pref="350" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                                               </Group>
@@ -1290,8 +1290,8 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="CourseInstructor_Search_TextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="CourseInstructor_Search_TextField" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
@@ -1354,41 +1354,36 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="CourseIntructor_Update_Button" max="32767" attributes="0"/>
-                                                          <Component id="CourseIntructor_Create_Button" pref="150" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="CourseIntructor_Delete_Button" min="-2" pref="150" max="-2" attributes="0"/>
-                                                          <Component id="CourseIntructor_Reset_Button" min="-2" pref="150" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="jPanel102" min="-2" pref="188" max="-2" attributes="0"/>
-                                                          <Component id="jPanel114" min="-2" pref="178" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jPanel112" pref="147" max="32767" attributes="0"/>
-                                                          <Component id="jPanel110" pref="147" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jPanel114" alignment="1" min="-2" pref="154" max="-2" attributes="0"/>
+                                                  <Component id="jPanel102" min="-2" pref="161" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jPanel110" pref="162" max="32767" attributes="0"/>
+                                                  <Component id="jPanel112" pref="162" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="CourseIntructor_Update_Button" max="32767" attributes="0"/>
+                                                  <Component id="CourseIntructor_Create_Button" pref="150" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="CourseIntructor_Delete_Button" min="-2" pref="150" max="-2" attributes="0"/>
+                                                  <Component id="CourseIntructor_Reset_Button" min="-2" pref="150" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jPanel104" min="-2" pref="348" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                       <Component id="jPanel101" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1510,7 +1505,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="CourseIntructor_CourseID_TextField" pref="162" max="32767" attributes="0"/>
+                                              <Component id="CourseIntructor_CourseID_TextField" pref="135" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -1625,6 +1620,7 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
+                                        <Property name="enabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -1698,7 +1694,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="CourseIntructor_PersonID_TextField" max="32767" attributes="0"/>
+                                              <Component id="CourseIntructor_PersonID_TextField" pref="142" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -1791,7 +1787,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="CourseIntructor_FirstName_TextField" pref="127" max="32767" attributes="0"/>
+                                              <Component id="CourseIntructor_FirstName_TextField" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -1812,6 +1808,7 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
+                                        <Property name="enabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -1882,7 +1879,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="CourseIntructor_LastName_TextField" pref="158" max="32767" attributes="0"/>
+                                              <Component id="CourseIntructor_LastName_TextField" pref="134" max="32767" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -1903,6 +1900,7 @@
                                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                           <Border info="null"/>
                                         </Property>
+                                        <Property name="enabled" type="boolean" value="false"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>

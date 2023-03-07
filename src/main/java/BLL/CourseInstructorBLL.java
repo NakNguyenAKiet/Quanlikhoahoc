@@ -101,4 +101,20 @@ public class CourseInstructorBLL {
         }
         return error;
     }
+
+    public String handleCreateCourseIntructor(JTextField Title, JTextField FirstName, JTextField LastName, JTextField CourseID, JTextField PersonID) {
+        String error = null;
+        String courseID = CourseID.getText();
+        String personID = PersonID.getText();
+        Courseinstructor Courseinstructor = new Courseinstructor();
+        Courseinstructor.setCourseID(Integer.parseInt(courseID));
+        Courseinstructor.setPersonID(Integer.parseInt(personID));
+
+        if (!CourseInstructorDAL.createCourseIntructor(Courseinstructor)) {
+            error = "There was an error while creating the course, please try again later";
+        } else {
+            handleResetCourseInstructor(Title, FirstName, LastName, CourseID, PersonID);
+        }
+        return error;
+    }
 }
