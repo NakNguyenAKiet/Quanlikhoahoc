@@ -12,10 +12,6 @@ public class OnsitecourseBLL {
     private static final OnsitecourseDAL onsiteCourseDAL = new OnsitecourseDAL();
     private static final Validate validate = new Validate();
 
-    public ArrayList<Onsitecourse> getAllOnsiteCourse() {
-        return onsiteCourseDAL.getAllOnsiteCourse();
-    }
-
     public Onsitecourse getOnsiteCourseByCourseID(int courseID) {
         return onsiteCourseDAL.getOnsiteCourseByCourseID(courseID);
     }
@@ -24,7 +20,7 @@ public class OnsitecourseBLL {
         table.setDefaultEditor(Object.class, null);
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0);
-        getAllOnsiteCourse().stream().map(onsitecourse -> new Object[]{
+        onsiteCourseDAL.getAllOnsiteCourse().stream().map(onsitecourse -> new Object[]{
             onsitecourse.getCourseID(),
             onsitecourse.getTilte(),
             onsitecourse.getCredits(),
