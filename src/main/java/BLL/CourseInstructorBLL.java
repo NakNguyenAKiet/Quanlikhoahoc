@@ -82,7 +82,8 @@ public class CourseInstructorBLL {
 
     public String handleDeleteCourseInstructor(int courseID, int personID, JTextField Title, JTextField FirstName, JTextField LastName, JTextField CourseID, JTextField PersonID) {
         String error = null;
-        boolean result = CourseInstructorDAL.deleteCourseInstructor(courseID, personID);
+        Courseinstructor Courseinstructor = new Courseinstructor(courseID, personID);
+        boolean result = CourseInstructorDAL.deleteCourseInstructor(Courseinstructor);
         if (result) {
             handleResetCourseInstructor(Title, FirstName, LastName, CourseID, PersonID);
         } else {
@@ -92,8 +93,10 @@ public class CourseInstructorBLL {
     }
 
     public String handleUpdateCourseInstructor(int courseID, int personID, JTextField Title, JTextField FirstName, JTextField LastName, JTextField CourseID, JTextField PersonID) {
-        String error = null;      
-        boolean result = CourseInstructorDAL.updateCourseInstructor(courseID, personID, Integer.parseInt(CourseID.getText()), Integer.parseInt(PersonID.getText()));
+        String error = null;
+        Courseinstructor CourseinstructorOLD = new Courseinstructor(courseID, personID);
+        Courseinstructor CourseinstructorNEW = new Courseinstructor(Integer.parseInt(CourseID.getText()), Integer.parseInt(PersonID.getText()));
+        boolean result = CourseInstructorDAL.updateCourseInstructor(CourseinstructorOLD, CourseinstructorNEW);
         if (result) {
             handleResetCourseInstructor(Title, FirstName, LastName, CourseID, PersonID);
         } else {
@@ -104,12 +107,7 @@ public class CourseInstructorBLL {
 
     public String handleCreateCourseIntructor(JTextField Title, JTextField FirstName, JTextField LastName, JTextField CourseID, JTextField PersonID) {
         String error = null;
-        String courseID = CourseID.getText();
-        String personID = PersonID.getText();
-        Courseinstructor Courseinstructor = new Courseinstructor();
-        Courseinstructor.setCourseID(Integer.parseInt(courseID));
-        Courseinstructor.setPersonID(Integer.parseInt(personID));
-
+        Courseinstructor Courseinstructor = new Courseinstructor(Integer.parseInt(CourseID.getText()), Integer.parseInt(PersonID.getText()));
         if (!CourseInstructorDAL.createCourseIntructor(Courseinstructor)) {
             error = "There was an error while creating the course, please try again later";
         } else {

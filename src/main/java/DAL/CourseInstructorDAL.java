@@ -108,7 +108,11 @@ public class CourseInstructorDAL {
         return list;
     }
 
-    public boolean deleteCourseInstructor(int courseID, int personID) {
+    public boolean deleteCourseInstructor(Courseinstructor Courseinstructor) {
+        
+        int courseID = Courseinstructor.getPersonID();
+        int personID = Courseinstructor.getPersonID();
+                
         boolean result = false;
         if (connection.openConnection()) {
             try {
@@ -129,7 +133,13 @@ public class CourseInstructorDAL {
         return result;
     }
 
-    public boolean updateCourseInstructor(int courseIDOld, int personIDOld, int CourseIDNew, int PersonIDNew) {
+    public boolean updateCourseInstructor(Courseinstructor CourseinstructorOLD, Courseinstructor CourseinstructorNEW) {
+        
+        int courseIDOld = CourseinstructorOLD.getCourseID();
+        int personIDOld = CourseinstructorOLD.getPersonID();
+        int CourseIDNew = CourseinstructorNEW.getCourseID();
+        int PersonIDNew = CourseinstructorNEW.getPersonID();
+        
         boolean result = false;
         if (connection.openConnection()) {
             try {
