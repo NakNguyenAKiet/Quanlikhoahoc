@@ -27,6 +27,16 @@ public class PersonBLL {
         return personDAL.getPersonByID(id);
     }
     
+    public boolean checkPersonIsStudentOrTeacher(int id){ //true is teacher, false is student
+        Person p = new Person();
+        p = getPersonByID(id);
+        if(p.getHireDay() != null){
+            return true;
+        }else{
+            return false;
+        }       
+    }
+    
     public ArrayList<Person> getAllStudents(){
         return personDAL.getAllStudents();
     }
