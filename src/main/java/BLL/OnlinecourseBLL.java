@@ -13,10 +13,6 @@ public class OnlinecourseBLL {
     private static final OnlinecourseDAL onlineCourseDAL = new OnlinecourseDAL();
     private static final Validate validate = new Validate();
 
-    public ArrayList<Onlinecourse> getAllOnlineCourse() {
-        return onlineCourseDAL.getAllOnlineCourse();
-    }
-
     public Onlinecourse getOnlineCourseByCourseID(int courseID) {
         return onlineCourseDAL.getOnlineCourseByCourseID(courseID);
     }
@@ -25,7 +21,7 @@ public class OnlinecourseBLL {
         table.setDefaultEditor(Object.class, null);
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0);
-        getAllOnlineCourse().stream().map(onlinecourse -> new Object[]{
+        onlineCourseDAL.getAllOnlineCourse().stream().map(onlinecourse -> new Object[]{
             onlinecourse.getCourseID(),
             onlinecourse.getTilte(),
             onlinecourse.getCredits(),
